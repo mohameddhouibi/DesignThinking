@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/calendar"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginBottom="20dp"
+    android:orientation="vertical"
+    android:id="@+id/item"
+    android:padding="6dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView2"
+        android:layout_width="44dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/not"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Invitation"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Desc"
+        app:layout_constraintStart_toEndOf="@+id/circleImageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <TextView
+        android:id="@+id/Desc"
+        android:layout_width="88dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Description"
+        android:textColor="#777"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toEndOf="@+id/circleImageView2" />
+
+    <Button
+        android:id="@+id/acc_invitation"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:background="@drawable/cornerbutton2"
+        android:fontFamily="@font/montserrat"
+        android:text="Join"
+        android:textAllCaps="false"
+        android:textColor="#003366"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Desc"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Button>
+    <Button
+        android:id="@+id/decline_invitation"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:background="@drawable/cornerbutton2"
+        android:fontFamily="@font/montserrat"
+        android:text="Decline"
+        android:textAllCaps="false"
+        android:textColor="#003366"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/acc_invitation"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Button>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

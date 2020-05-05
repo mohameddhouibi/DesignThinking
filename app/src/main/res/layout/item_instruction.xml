@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/calendar"
+    >
+
+    <ImageView
+        android:id="@+id/img_view"
+        android:layout_width="250dp"
+        android:layout_height="368dp"
+        android:layout_marginTop="-50dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="@font/montserrat"
+        android:layout_below="@+id/img_view"
+        android:layout_marginTop="-20dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:text="One"
+        android:id="@+id/txt_view">
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="-20dp"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:text="One"
+        android:id="@+id/txt_view_finish"
+        android:gravity="center_horizontal">
+    </TextView>
+    <LinearLayout
+        android:id="@+id/lBtn"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_view"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <Button
+
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/opt1"
+            android:background="@drawable/bt_yes"
+            android:textColor="@color/gradient_start_color"
+            android:drawableTint="@color/gradient_start_color"
+
+            ></Button>
+        <Button
+            android:layout_toRightOf="@id/opt1"
+            android:layout_width="120dp"
+            android:textColor="@color/gradient_start_color"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_no"
+            android:drawableTint="@color/gradient_start_color"
+            android:id="@+id/opt2"></Button>
+    </LinearLayout>
+
+</RelativeLayout>

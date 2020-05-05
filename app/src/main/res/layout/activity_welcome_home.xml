@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu.WelcomeHomeActivity"
+    android:background="@drawable/back"
+    >
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/intro5"></ImageView>
+
+        <ImageView
+            android:id="@+id/worksho"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_below="@+id/introduction"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/worksho1"></ImageView>
+        <ImageView
+            android:id="@+id/hel"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/worksho"
+            android:src="@drawable/hel11"></ImageView>
+        <ImageView
+            android:id="@+id/constribute"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_below="@+id/hel"
+            android:layout_marginTop="10dp"
+
+            android:src="@drawable/constr1"></ImageView>
+
+
+    </RelativeLayout>
+
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/nav"
+        app:itemTextColor="#FFF"
+        app:menu="@menu/bottom_navigation">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "107361809643",
+    "firebase_url": "https://designthinking-a271a.firebaseio.com",
+    "project_id": "designthinking-a271a",
+    "storage_bucket": "designthinking-a271a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107361809643:android:e75019e34baa8985b33aae",
+        "android_client_info": {
+          "package_name": "com.muhameddhouibi.designthinking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107361809643-cdpg11pnh8quiflj023hdfqpsipp6q9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArU9JINsm36yqLbSBrAfAuG6VVjVF3OM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107361809643-cdpg11pnh8quiflj023hdfqpsipp6q9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/back">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/regUserPhoto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/userphoto"
+        app:civ_border_color="#FFF"
+        android:layout_centerHorizontal="true"
+        app:civ_border_width="2dp" />
+    <EditText
+        android:id="@+id/regName"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/regUserPhoto"
+        android:backgroundTint="#003366"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+    <EditText
+        android:id="@+id/regMail"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/regName"
+        android:backgroundTint="#003366"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+    <EditText
+        android:id="@+id/regPassword"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/regMail"
+        android:backgroundTint="#003366"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/regPassword2"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/regPassword"
+        android:backgroundTint="#003366"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
+        android:hint="Confirm Password"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+    <Button
+        android:id="@+id/regBtn"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/regPassword2"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cornerbutton1"
+        android:fontFamily="@font/montserrat"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+
+        />
+
+    <TextView
+        android:id="@+id/Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp" />
+
+    <ProgressBar
+        android:id="@+id/regProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regBtn"/>
+
+</RelativeLayout>
