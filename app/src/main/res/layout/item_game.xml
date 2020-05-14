@@ -50,7 +50,6 @@
         android:layout_centerVertical="true"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-
         android:background="@drawable/cornerbutton2"
         android:fontFamily="@font/montserrat"
         android:text="Start"

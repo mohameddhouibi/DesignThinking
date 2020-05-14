@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RooActivity"></activity>
+        <activity android:name=".Steps.Step4Activity"></activity>
+        <activity android:name=".Steps.Step3Activity" />
+        <activity android:name=".Steps.Step2Activity" />
+        <activity android:name=".Steps.Step1Activity" />
+        <activity android:name=".RooActivity" />
         <activity
             android:name=".TestSwiActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

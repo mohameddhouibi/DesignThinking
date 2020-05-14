@@ -28,7 +28,7 @@
         android:layout_height="105dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_marginLeft="0dp"
         android:src="@drawable/oans"></ImageView>
     <ImageView
@@ -37,7 +37,7 @@
         android:layout_height="105dp"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="100dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_marginLeft="0dp"
         android:src="@drawable/oans"></ImageView>
 
