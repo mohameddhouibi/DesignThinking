@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,14 +26,12 @@ import com.google.firebase.internal.api.FirebaseNoSignedInUserException;
 import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.Entity.Invitation;
 import com.muhameddhouibi.designthinking.Entity.User;
+import com.muhameddhouibi.designthinking.Steps.Step1Activity;
 
 public class TestGameActivity extends AppCompatActivity {
-    Button btn_test , ready;
+    Button ready;
     String playerName;
     String playerId;
-    String RoomName;
-    String Role;
-    String message;
     FirebaseAuth mAuth;
     private FirebaseRecyclerOptions<User> options;
     private FirebaseRecyclerAdapter<User,MyViewHolder>adapter;
@@ -46,6 +45,7 @@ public class TestGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_game);
         //btn_test =findViewById(R.id.bt_test);
 
+        final String roomid = getIntent().getStringExtra("roomname");
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         Users=FirebaseDatabase.getInstance().getReference("Users");
@@ -69,7 +69,6 @@ public class TestGameActivity extends AppCompatActivity {
                         holder.btn_invite.setText("Invited");
                         holder.btn_invite.setEnabled(false);
                         final String invitation_id= invitationReff.push().getKey();
-                        String roomid = getIntent().getStringExtra("roomname");
                         Invitation invitation = new Invitation(invitation_id,roomid,sender,reciever);
                         invitationReff.child(invitation_id).setValue(invitation);
 
@@ -94,7 +93,9 @@ public class TestGameActivity extends AppCompatActivity {
         ready.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference readying = FirebaseDatabase.getInstance().getReference("");
+                Intent i = new Intent(TestGameActivity.this, RooActivity.class);
+                i.putExtra("room",roomid);
+                startActivity(i);
             }
         });
 
