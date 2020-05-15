@@ -52,6 +52,8 @@ public class RooActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roo);
+        mAuth = FirebaseAuth.getInstance();
+
         final String roomnamea = getIntent().getStringExtra("room");
         final String roomnamea2 = getIntent().getStringExtra("roo");
         r1=findViewById(R.id.item);
@@ -86,6 +88,7 @@ public class RooActivity extends AppCompatActivity {
         r3.setVisibility(View.INVISIBLE);
         r4.setVisibility(View.INVISIBLE);
         r5.setVisibility(View.INVISIBLE);
+
         currentUser = mAuth.getCurrentUser();
 
         tx1.setText(currentUser.getDisplayName());
