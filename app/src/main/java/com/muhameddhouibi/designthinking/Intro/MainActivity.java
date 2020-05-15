@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Intro;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,7 +6,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -38,6 +37,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.muhameddhouibi.designthinking.Entity.User;
+import com.muhameddhouibi.designthinking.Home2Activity;
+import com.muhameddhouibi.designthinking.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -274,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent(getApplicationContext(),Home2Activity.class);
+        Intent homeActivity = new Intent(getApplicationContext(), Home2Activity.class);
         startActivity(homeActivity);
         finish();
 

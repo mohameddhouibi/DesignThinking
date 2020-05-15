@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Intro;
 
 class ScreenItem {
     String Title,Description;

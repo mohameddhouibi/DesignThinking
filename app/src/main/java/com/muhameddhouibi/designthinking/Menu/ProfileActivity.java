@@ -20,8 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.Home2Activity;
-import com.muhameddhouibi.designthinking.LoginActivity;
+import com.muhameddhouibi.designthinking.Intro.LoginActivity;
 import com.muhameddhouibi.designthinking.R;
 
 public class ProfileActivity extends AppCompatActivity {

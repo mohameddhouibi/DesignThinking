@@ -1,15 +1,10 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Intro;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,10 +25,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.Entity.User;
+import com.muhameddhouibi.designthinking.Home2Activity;
 import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
-
-import org.w3c.dom.Text;
+import com.muhameddhouibi.designthinking.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -66,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         databaseUsers= FirebaseDatabase.getInstance().getReference("Users");
         mAuth = FirebaseAuth.getInstance();
 
-        HomeActivity = new Intent(this,Home2Activity.class);
+        HomeActivity = new Intent(this, Home2Activity.class);
         loginPhoto = findViewById(R.id.login_photo);
 
 

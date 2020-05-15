@@ -33,57 +33,57 @@ public class TestSwiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_swi);
 
         CardStackView cardStackView = findViewById(R.id.card_stack_view);
-//        manager = new CardStackLayoutManager(this, new CardStackListener() {
-//            @Override
-//            public void onCardDragging(Direction direction, float ratio) {
-//                Log.d(TAG, "onCardDragging: d=" + direction.name() + " ratio=" + ratio);
-//            }
-//
-//            @Override
-//            public void onCardSwiped(Direction direction) {
-//                Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
-//                if (direction == Direction.Right){
-//                    Toast.makeText(TestSwiActivity.this, "Direction Right", Toast.LENGTH_SHORT).show();
-//                }
-//                if (direction == Direction.Top){
-//                    Toast.makeText(TestSwiActivity.this, "Direction Top", Toast.LENGTH_SHORT).show();
-//                }
-//                if (direction == Direction.Left){
-//                    Toast.makeText(TestSwiActivity.this, "Direction Left", Toast.LENGTH_SHORT).show();
-//                }
-//                if (direction == Direction.Bottom){
-//                    Toast.makeText(TestSwiActivity.this, "Direction Bottom", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                // Paginating
-//                if (manager.getTopPosition() == adapter.getItemCount() - 5){
-//                    paginate();
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onCardRewound() {
-//                Log.d(TAG, "onCardRewound: " + manager.getTopPosition());
-//            }
-//
-//            @Override
-//            public void onCardCanceled() {
-//                Log.d(TAG, "onCardRewound: " + manager.getTopPosition());
-//            }
-//
-//            @Override
-//            public void onCardAppeared(View view, int position) {
-//                TextView tv = view.findViewById(R.id.item_name);
-//                Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
-//            }
-//
-//            @Override
-//            public void onCardDisappeared(View view, int position) {
-//                TextView tv = view.findViewById(R.id.item_name);
-//                Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
-//            }
-//        });
+        manager = new CardStackLayoutManager(this, new CardStackListener() {
+            @Override
+            public void onCardDragging(Direction direction, float ratio) {
+                Log.d(TAG, "onCardDragging: d=" + direction.name() + " ratio=" + ratio);
+            }
+
+            @Override
+            public void onCardSwiped(Direction direction) {
+                Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
+                if (direction == Direction.Right){
+                    Toast.makeText(TestSwiActivity.this, "Direction Right", Toast.LENGTH_SHORT).show();
+                }
+                if (direction == Direction.Top){
+                    Toast.makeText(TestSwiActivity.this, "Direction Top", Toast.LENGTH_SHORT).show();
+                }
+                if (direction == Direction.Left){
+                    Toast.makeText(TestSwiActivity.this, "Direction Left", Toast.LENGTH_SHORT).show();
+                }
+                if (direction == Direction.Bottom){
+                    Toast.makeText(TestSwiActivity.this, "Direction Bottom", Toast.LENGTH_SHORT).show();
+                }
+
+                // Paginating
+                if (manager.getTopPosition() == adapter.getItemCount() - 5){
+                    paginate();
+                }
+
+            }
+
+            @Override
+            public void onCardRewound() {
+                Log.d(TAG, "onCardRewound: " + manager.getTopPosition());
+            }
+
+            @Override
+            public void onCardCanceled() {
+                Log.d(TAG, "onCardRewound: " + manager.getTopPosition());
+            }
+
+            @Override
+            public void onCardAppeared(View view, int position) {
+                TextView tv = view.findViewById(R.id.item_name);
+                Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
+            }
+
+            @Override
+            public void onCardDisappeared(View view, int position) {
+                TextView tv = view.findViewById(R.id.item_name);
+                Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
+            }
+        });
         manager.setStackFrom(StackFrom.None);
         manager.setVisibleCount(3);
         manager.setTranslationInterval(8.0f);

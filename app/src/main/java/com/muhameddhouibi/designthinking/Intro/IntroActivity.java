@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -16,8 +16,10 @@ import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.muhameddhouibi.designthinking.Intro.IntroViewPagerAdapter;
 import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
+import com.muhameddhouibi.designthinking.R;
+import com.muhameddhouibi.designthinking.Intro.ScreenItem;
 
 import java.util.ArrayList;
 import java.util.List;

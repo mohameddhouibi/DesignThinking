@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.muhameddhouibi.designthinking.R;
 
 public class HomeActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 4000 ;

@@ -5,15 +5,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,7 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.Entity.User;
+import com.muhameddhouibi.designthinking.Intro.LoginActivity;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
@@ -32,11 +27,6 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
-
-import static com.muhameddhouibi.designthinking.R.id.action_image;
-import static com.muhameddhouibi.designthinking.R.id.action_logout;
-import static com.muhameddhouibi.designthinking.R.id.start;
 
 public class Home2Activity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -137,7 +127,7 @@ public class Home2Activity extends AppCompatActivity  implements NavigationView.
                     DatabaseReference con = connectionRef;
                     con.setValue(false);
                     mAuth.getInstance().signOut();
-                    Intent i = new Intent(Home2Activity.this,LoginActivity.class);
+                    Intent i = new Intent(Home2Activity.this, LoginActivity.class);
                     startActivity(i);
                 }
             }
