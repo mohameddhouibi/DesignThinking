@@ -25,7 +25,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.Home2Activity;
 import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
 import com.muhameddhouibi.designthinking.R;
 
@@ -59,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         databaseUsers= FirebaseDatabase.getInstance().getReference("Users");
         mAuth = FirebaseAuth.getInstance();
 
-        HomeActivity = new Intent(this, Home2Activity.class);
+        HomeActivity = new Intent(this, WelcomeHomeActivity.class);
         loginPhoto = findViewById(R.id.login_photo);
 
 

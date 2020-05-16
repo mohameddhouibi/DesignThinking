@@ -49,10 +49,7 @@
         <activity
             android:name=".DesignIntroductionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".Home2Activity"
-            android:label="@string/title_activity_home2"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Intro.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

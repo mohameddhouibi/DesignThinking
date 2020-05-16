@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.muhameddhouibi.designthinking.Intro.LoginActivity;
 import com.muhameddhouibi.designthinking.R;
 import com.muhameddhouibi.designthinking.TestSwiActivity;
 import com.muhameddhouibi.designthinking.WorkshopActivity;
@@ -114,7 +115,10 @@ public class WelcomeHomeActivity extends AppCompatActivity {
                 if (connected)
                 {
                     DatabaseReference con = connectionRef;
-                    con.setValue(true);
+                    con.setValue(false);
+//                    mAuth.getInstance().signOut();
+//                    Intent i = new Intent(WelcomeHomeActivity.this, LoginActivity.class);
+//                    startActivity(i);
                 }
             }
 
@@ -123,6 +127,7 @@ public class WelcomeHomeActivity extends AppCompatActivity {
 
             }
         });
+
 
 
 

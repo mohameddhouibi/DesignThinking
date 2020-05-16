@@ -28,16 +28,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.muhameddhouibi.designthinking.Entity.User;
-import com.muhameddhouibi.designthinking.Home2Activity;
+import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
 import com.muhameddhouibi.designthinking.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -186,33 +183,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private void UpdateConnectionStatut() {
-        final String his_name = mAuth.getCurrentUser().getDisplayName();
-        final DatabaseReference connectionRef = FirebaseDatabase.getInstance().getReference("Users/"+his_name).child("connection");
-        //   final DatabaseReference lastconnected = FirebaseDatabase.getInstance().getReference("Users").child("last connected");
-        final DatabaseReference infoconnected = FirebaseDatabase.getInstance().getReference(".info/connected");
 
-        infoconnected.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                boolean connected = dataSnapshot.getValue(Boolean.class);
-                if (connected)
-                {
-                    DatabaseReference con = connectionRef;
-                    con.setValue(true);
-                    con.onDisconnect().setValue(false);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-
-
-    }
 
 
     // update user photo and name
@@ -275,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent(getApplicationContext(), Home2Activity.class);
+        Intent homeActivity = new Intent(getApplicationContext(), WelcomeHomeActivity.class);
         startActivity(homeActivity);
         finish();
 
