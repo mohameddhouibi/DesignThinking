@@ -191,6 +191,13 @@ public class RooActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Intent i = new Intent (RooActivity.this, Step1Activity.class);
+                if(roomnamea == null){
+                    RoomNameFinal = roomnamea2 ;
+                }
+                else if (roomnamea2 == null){
+                    RoomNameFinal = roomnamea ;
+                }
+                i.putExtra("player1",currentUser.getDisplayName());
                 i.putExtra("roomName",RoomNameFinal);
                 startActivity(i);
             }

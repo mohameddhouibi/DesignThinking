@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="100dp"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    android:background="@drawable/bt_blanc"
+    >
+
+    <TextView
+        android:id="@+id/NameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginStart="5dp"></TextView>
+    <TextView
+        android:id="@+id/messageTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="the Message"
+        android:layout_below="@+id/NameTv"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/black_color"></TextView>
+    <TextView
+        android:id="@+id/timetv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="Time"
+        android:fontFamily="@font/montserrat"
+        android:layout_below="@+id/messageTv"
+        android:textSize="12sp"
+        android:layout_marginEnd="5dp"></TextView>
+
+</RelativeLayout>
