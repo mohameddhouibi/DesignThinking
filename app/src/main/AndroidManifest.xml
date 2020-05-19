@@ -23,6 +23,9 @@
             android:name=".TestSwiActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
+            android:name=".DiscussionsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".Menu.WelcomeHomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

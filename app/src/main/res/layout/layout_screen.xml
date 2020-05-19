@@ -27,7 +27,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/montserrat"
         android:text="TextView"
-        android:textColor="@color/intro_title_color"
+        android:textColor="@color/black_color"
         android:textSize="32dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
