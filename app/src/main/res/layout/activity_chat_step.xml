@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".ChatStepActivity">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ChatRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chatlayout"
+        app:stackFromEnd="true"
+        tools:listitem="@layout/row_groupchat_left">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:id="@+id/chatlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/attch_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:src="@drawable/ic_attach_file_black_24dp"></ImageButton>
+
+        <EditText
+            android:id="@+id/messageEt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Start Typing..."
+            android:inputType="textCapSentences|textImeMultiLine"></EditText>
+
+        <ImageButton
+            android:id="@+id/send_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_send_black_24dp"
+            android:background="@null">
+        </ImageButton>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

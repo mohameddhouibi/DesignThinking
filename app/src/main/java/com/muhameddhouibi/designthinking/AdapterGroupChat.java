@@ -27,7 +27,11 @@ public class AdapterGroupChat extends  RecyclerView.Adapter<AdapterGroupChat.Hol
 
     private Context context ;
     private ArrayList<ChatGroup> chatGroupList  ;
+
+
     private FirebaseAuth mauth ;
+
+
     public AdapterGroupChat(Context context, ArrayList<ChatGroup> chatGroupList) {
         this.context = context;
         this.chatGroupList = chatGroupList;

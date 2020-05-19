@@ -11,19 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Steps.Step7Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".Steps.Step6Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Steps.Step5Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Steps.Step4Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Steps.Step3Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Steps.Step2Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Steps.Step1Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".RooActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".ChatStepActivity"></activity>
         <activity
-            android:name=".TestSwiActivity"
+            android:name=".Steps.Step7Activity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".DiscussionsActivity"
+            android:name=".Steps.Step6Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Steps.Step5Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Steps.Step4Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Steps.Step3Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Steps.Step2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Steps.Step1Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".RooActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".TestSwiActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Menu.WelcomeHomeActivity"
@@ -52,7 +66,6 @@
         <activity
             android:name=".DesignIntroductionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".Intro.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

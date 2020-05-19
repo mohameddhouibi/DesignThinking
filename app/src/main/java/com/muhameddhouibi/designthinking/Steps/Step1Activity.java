@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.DiscussionsActivity;
+import com.muhameddhouibi.designthinking.ChatStepActivity;
 import com.muhameddhouibi.designthinking.R;
 
 import java.util.HashMap;
@@ -186,8 +186,9 @@ public class Step1Activity extends AppCompatActivity {
                                 hashMap1.put("Player4",a4);
                                 hashMap1.put("Player5",a5);
                                 Discussions.child(roomname+"Step1").child("Participants").setValue(hashMap1);
-                                Intent i = new Intent(Step1Activity.this, DiscussionsActivity.class);
+                                Intent i = new Intent(Step1Activity.this, ChatStepActivity.class);
                                 i.putExtra("discussion",roomname+"Step1");
+                                startActivity(i);
                             }
                         });
             }
