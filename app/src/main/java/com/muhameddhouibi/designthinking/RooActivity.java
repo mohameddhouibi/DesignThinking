@@ -68,117 +68,7 @@ public class RooActivity extends AppCompatActivity {
         tx4=findViewById(R.id.UserName_connected3);
         tx5=findViewById(R.id.UserName_connected4);
         start  = findViewById(R.id.ready);
-        start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Intent i = new Intent (RooActivity.this, Step1Activity.class);
-                if(roomnamea == null){
-                    RoomNameFinal = roomnamea2 ;
-                }
-                else if (roomnamea2 == null){
-                    RoomNameFinal = roomnamea ;
-                }
 
-                playerreff2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        final String value2 = dataSnapshot.getValue(String.class);
-                        if (value2 == null)
-                        {
-
-                        }
-                        else
-                        {
-                            r2.setVisibility(View.VISIBLE);
-                            tx2.setText(value2);
-                            i.putExtra("player2",value2);
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-                playerreff3.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        final String value2 = dataSnapshot.getValue(String.class);
-                        if (value2 == null)
-                        {
-
-                        }
-                        else
-                        {
-                            r3.setVisibility(View.VISIBLE);
-                            tx3.setText(value2);
-                            i.putExtra("player3",value2);
-
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-                playerreff4.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        final String value2 = dataSnapshot.getValue(String.class);
-                        if (value2 == null)
-                        {
-
-                        }
-                        else
-                        {
-                            r4.setVisibility(View.VISIBLE);
-                            tx4.setText(value2);
-                            i.putExtra("player4",value2);
-
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-                playerreff5.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        final String value2 = dataSnapshot.getValue(String.class);
-                        if (value2 == null)
-                        {
-
-                        }
-                        else
-                        {
-                            r5.setVisibility(View.VISIBLE);
-                            tx5.setText(value2);
-                            i.putExtra("player5",value2);
-
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-                i.putExtra("player1",currentUser.getDisplayName());
-                i.putExtra("roomName",RoomNameFinal);
-                startActivity(i);
-            }
-        });
 
         r1.setVisibility(View.VISIBLE);
         r2.setVisibility(View.INVISIBLE);
@@ -208,11 +98,6 @@ public class RooActivity extends AppCompatActivity {
             Toast toast=Toast. makeText(getApplicationContext(),roomnamea2 + "2",Toast. LENGTH_SHORT);
             toast. show();
         }
-
-
-
-
-
 
         playerreff2.addValueEventListener(new ValueEventListener() {
             @Override
@@ -302,7 +187,14 @@ public class RooActivity extends AppCompatActivity {
             }
         });
 
-
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent i = new Intent (RooActivity.this, Step1Activity.class);
+                i.putExtra("roomName",RoomNameFinal);
+                startActivity(i);
+            }
+        });
 
 
 

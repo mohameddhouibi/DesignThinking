@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,6 +39,7 @@ public class Step1Activity extends AppCompatActivity {
         player4 =  getIntent().getStringExtra("player4");
         player5 =  getIntent().getStringExtra("player5");
         roomname =  getIntent().getStringExtra("roomName");
+        Toast toast = Toast. makeText(this,player2 , Toast.LENGTH_SHORT); toast. show();
         Discussions=FirebaseDatabase.getInstance().getReference("Discussions");
         mAuth = FirebaseAuth.getInstance();
         final String Discussion_id= Discussions.push().getKey();
