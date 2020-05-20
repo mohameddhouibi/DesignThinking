@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +29,7 @@ public class WelcomeHomeActivity extends AppCompatActivity {
     FirebaseUser currentUser ;
     ImageView introduction,workshop,help,constribute;
     String playerName ;
+    TextView tx3 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +77,8 @@ public class WelcomeHomeActivity extends AppCompatActivity {
         constribute=findViewById(R.id.constribute);
         mAuth = FirebaseAuth.getInstance();
         playerName = mAuth.getCurrentUser().getDisplayName();
-
-
+        tx3 = findViewById(R.id.tx3);
+        tx3.setText(mAuth.getCurrentUser().getDisplayName());
 
         introduction.setOnClickListener(new View.OnClickListener() {
             @Override
