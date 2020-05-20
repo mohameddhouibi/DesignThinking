@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/chatlayout"
         app:stackFromEnd="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/row_groupchat_left">
 
     </androidx.recyclerview.widget.RecyclerView>

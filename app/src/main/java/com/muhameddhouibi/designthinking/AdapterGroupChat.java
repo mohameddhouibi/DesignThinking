@@ -62,7 +62,7 @@ public class AdapterGroupChat extends  RecyclerView.Adapter<AdapterGroupChat.Hol
         String sender_name = chatGroup.getSender();
         String timestamp = chatGroup.getTimestamp();
 
-        Calendar cal = Calendar.getInstance(Locale.FRANCE);
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
         cal.setTimeInMillis(Long.parseLong(timestamp));
         String dateTime = DateFormat.format("dd/MM/yyyy hh:mm aa",cal).toString();
 
@@ -76,7 +76,8 @@ public class AdapterGroupChat extends  RecyclerView.Adapter<AdapterGroupChat.Hol
 
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return chatGroupList.size();
     }
 
@@ -95,7 +96,7 @@ public class AdapterGroupChat extends  RecyclerView.Adapter<AdapterGroupChat.Hol
 
     class HolderGroupChat extends RecyclerView.ViewHolder {
 
-        TextView NameTv,messageTv,timetv;
+        private TextView NameTv,messageTv,timetv;
         public HolderGroupChat(@NonNull View itemView) {
             super(itemView);
             NameTv =itemView.findViewById(R.id.NameTv);
