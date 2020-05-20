@@ -183,7 +183,8 @@
                     android:layout_marginEnd="5dp"
                     android:fontFamily="@font/montserrat"
                     android:text="You need help ?
-        Tutor and Session manager are here to help you"
+
+               Tutor and Session manager are here to help you"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite"
                     android:textSize="16dp"
@@ -235,10 +236,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/nav"
-        app:itemTextColor="#FFF"
+        android:background="@drawable/concept"
+        app:itemTextColor="#5400E8"
         app:menu="@menu/bottom_navigation">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 

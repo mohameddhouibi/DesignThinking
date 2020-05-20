@@ -117,7 +117,7 @@ public class WelcomeHomeActivity extends AppCompatActivity {
                 if (connected)
                 {
                     DatabaseReference con = connectionRef;
-                    con.setValue(false);
+                    con.setValue(true);
 //                    mAuth.getInstance().signOut();
 //                    Intent i = new Intent(WelcomeHomeActivity.this, LoginActivity.class);
 //                    startActivity(i);

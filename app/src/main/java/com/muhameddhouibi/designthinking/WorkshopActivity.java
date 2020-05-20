@@ -76,6 +76,8 @@ public class WorkshopActivity extends AppCompatActivity  {
                         i.putExtra("roomname",""+roomname);
                         i.putExtra("nbr",""+nbrplayer);
                         startActivity(i);
+                        overridePendingTransition(0,0);
+
                     }
                 });
                 holder.GameName.setText(""+model.getRoomName());
