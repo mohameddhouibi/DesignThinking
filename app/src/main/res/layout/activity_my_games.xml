@@ -82,29 +82,7 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/aaa2"
-                android:layout_below="@id/aaa"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
 
-
-                <Button
-                    android:id="@+id/creategame"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:textColor="@color/colorWhite"
-                    android:background="@drawable/bt_back"
-                    android:text="Create New Room"></Button>
-
-
-            </RelativeLayout>
 
 
         </RelativeLayout>
