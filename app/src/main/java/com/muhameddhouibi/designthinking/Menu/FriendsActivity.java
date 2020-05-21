@@ -90,7 +90,7 @@ public class FriendsActivity extends AppCompatActivity {
             @Override
             public NewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user,parent,false);
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user1,parent,false);
                 return new NewViewHolder(v);
             }
         };
