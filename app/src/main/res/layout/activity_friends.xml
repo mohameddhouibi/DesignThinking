@@ -71,7 +71,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerConnectedUsers"
                     android:layout_width="match_parent"
-                    tools:listitem="@layout/item_user"
+                    tools:listitem="@layout/item_user1"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true">
@@ -79,30 +79,7 @@
                 </androidx.recyclerview.widget.RecyclerView>
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/aaa2"
-                android:layout_below="@id/aaa"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
 
-
-                <Button
-                    android:id="@+id/ready"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:textColor="@color/colorWhite"
-                    android:background="@drawable/cornerbutton1"
-
-                    android:text="Before the  Workshop"></Button>
-
-
-            </RelativeLayout>
 
 
         </RelativeLayout>

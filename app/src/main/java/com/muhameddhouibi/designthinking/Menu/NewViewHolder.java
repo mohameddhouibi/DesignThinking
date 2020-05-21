@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Menu;
 
 import android.view.View;
 import android.widget.Button;
@@ -7,14 +7,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.muhameddhouibi.designthinking.R;
 
-
- class MyViewHolder extends RecyclerView.ViewHolder {
+public class NewViewHolder extends RecyclerView.ViewHolder {
 
     TextView userName;
     Button btn_invite;
 
-    public MyViewHolder(@NonNull View itemView) {
+    public NewViewHolder(@NonNull View itemView) {
         super(itemView);
 
         userName = itemView.findViewById(R.id.UserName_connected);
