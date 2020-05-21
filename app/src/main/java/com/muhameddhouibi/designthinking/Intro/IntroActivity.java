@@ -50,12 +50,16 @@ public class IntroActivity extends AppCompatActivity {
             if (mAuth.getCurrentUser() != null ) {
                 Intent hoActivity = new Intent(getApplicationContext(), WelcomeHomeActivity.class );
             startActivity(hoActivity);
-            finish();
+                overridePendingTransition(0,0);
+
+                finish();
 
             }
             else {
                 Intent hoActivity = new Intent(getApplicationContext(),LoginActivity.class );
                 startActivity(hoActivity);
+                overridePendingTransition(0,0);
+
                 finish();
 
             }
@@ -139,6 +143,8 @@ public class IntroActivity extends AppCompatActivity {
 
                 Intent mainActivity = new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(mainActivity);
+                overridePendingTransition(0,0);
+
                 // also we need to save a boolean value to storage so next time when the user run the app
                 // we could know that he is already checked the intro screen activity
                 // i'm going to use shared preferences to that process

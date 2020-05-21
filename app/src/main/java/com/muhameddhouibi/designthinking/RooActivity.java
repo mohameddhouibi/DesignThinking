@@ -88,15 +88,13 @@ public class RooActivity extends AppCompatActivity {
             playerreff3 =FirebaseDatabase.getInstance().getReference("rooms/" + roomnamea + "/player"+3);
             playerreff4 =FirebaseDatabase.getInstance().getReference("rooms/" + roomnamea + "/player"+4);
             playerreff5 =FirebaseDatabase.getInstance().getReference("rooms/" + roomnamea + "/player"+5);
-            Toast toast=Toast. makeText(getApplicationContext(),roomnamea + "1",Toast. LENGTH_SHORT);
-            toast. show();
+
         }else if (!(roomnamea2 == null)) {
             playerreff2 =FirebaseDatabase.getInstance().getReference("rooms/" + roomnamea2 + "/player"+2);
             playerreff3 =FirebaseDatabase.getInstance().getReference("rooms/" + roomnamea2 + "/player"+3);
             playerreff4 =FirebaseDatabase.getInstance().getReference("rooms/" + roomnamea2 + "/player"+4);
             playerreff5 =FirebaseDatabase.getInstance().getReference("rooms/" + roomnamea2 + "/player"+5);
-            Toast toast=Toast. makeText(getApplicationContext(),roomnamea2 + "2",Toast. LENGTH_SHORT);
-            toast. show();
+
         }
 
         playerreff2.addValueEventListener(new ValueEventListener() {
@@ -200,6 +198,8 @@ public class RooActivity extends AppCompatActivity {
                 i.putExtra("player1",currentUser.getDisplayName());
                 i.putExtra("roomName",RoomNameFinal);
                 startActivity(i);
+                overridePendingTransition(0,0);
+
             }
         });
 

@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent registerActivity = new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(registerActivity);
+                overridePendingTransition(0,0);
+
                 finish();
 
             }
@@ -248,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent homeActivity = new Intent(getApplicationContext(), WelcomeHomeActivity.class);
         startActivity(homeActivity);
+        overridePendingTransition(0,0);
         finish();
 
 

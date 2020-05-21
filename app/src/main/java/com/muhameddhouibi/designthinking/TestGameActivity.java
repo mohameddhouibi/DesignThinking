@@ -96,6 +96,8 @@ public class TestGameActivity extends AppCompatActivity {
                 Intent i = new Intent(TestGameActivity.this, RooActivity.class);
                 i.putExtra("room",roomid);
                 startActivity(i);
+                overridePendingTransition(0,0);
+
             }
         });
 

@@ -85,6 +85,8 @@ public class WelcomeHomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(WelcomeHomeActivity.this, TestSwiActivity.class);
                 startActivity(i);
+                overridePendingTransition(0,0);
+
             }
         });
 
@@ -93,6 +95,8 @@ public class WelcomeHomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(WelcomeHomeActivity.this, WorkshopActivity.class);
                 startActivity(i);
+                overridePendingTransition(0,0);
+
             }
         });
         help.setOnClickListener(new View.OnClickListener() {

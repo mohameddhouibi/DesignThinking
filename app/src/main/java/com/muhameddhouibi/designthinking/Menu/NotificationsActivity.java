@@ -133,6 +133,8 @@ public class NotificationsActivity extends AppCompatActivity {
                                         Intent i = new Intent(NotificationsActivity.this, RooActivity.class);
                                         i.putExtra("roo",roomname);
                                         startActivity(i);
+                                        overridePendingTransition(0,0);
+
                                         DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
                                         GestInvi.removeValue();
                                     }else
@@ -147,6 +149,8 @@ public class NotificationsActivity extends AppCompatActivity {
                                                 Intent i = new Intent(NotificationsActivity.this, RooActivity.class);
                                                 i.putExtra("roo",roomname);
                                                 startActivity(i);
+                                                overridePendingTransition(0,0);
+
                                                 DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
                                                 GestInvi.removeValue();
                                             } else if(value3 !=model.getDesitination_uid() || value2 == value3)
@@ -164,6 +168,8 @@ public class NotificationsActivity extends AppCompatActivity {
                                                             Intent i = new Intent(NotificationsActivity.this, RooActivity.class);
                                                             i.putExtra("roo",roomname);
                                                             startActivity(i);
+                                                            overridePendingTransition(0,0);
+
                                                             DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
                                                             GestInvi.removeValue();
                                                         }else if (value4 !=model.getDesitination_uid() && model.getDesitination_uid() !=value2 && model.getDesitination_uid() !=value3)
@@ -173,6 +179,8 @@ public class NotificationsActivity extends AppCompatActivity {
                                                             Intent i = new Intent(NotificationsActivity.this, RooActivity.class);
                                                             i.putExtra("roo",roomname);
                                                             startActivity(i);
+                                                            overridePendingTransition(0,0);
+
                                                             DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
                                                             GestInvi.removeValue();
                                                         }

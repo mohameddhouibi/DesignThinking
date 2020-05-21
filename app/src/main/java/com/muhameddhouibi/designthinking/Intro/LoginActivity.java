@@ -67,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                overridePendingTransition(0,0);
+
             }
         });
         loginPhoto.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +77,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent registerActivity = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(registerActivity);
+                overridePendingTransition(0,0);
+
                 finish();
 
 
@@ -165,6 +169,8 @@ public class LoginActivity extends AppCompatActivity {
 
         Intent i = new Intent(LoginActivity.this, WelcomeHomeActivity.class);
         startActivity(i);
+        overridePendingTransition(0,0);
+
         finish();
 
 

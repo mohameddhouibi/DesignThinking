@@ -110,6 +110,8 @@ public class ProfileActivity extends AppCompatActivity {
                     con.setValue(false);
                     mAuth.getInstance().signOut();
                     Intent i = new Intent(ProfileActivity.this, LoginActivity.class);
+                    overridePendingTransition(0,0);
+
                     startActivity(i);
                 }
             }

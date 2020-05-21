@@ -25,6 +25,8 @@ public class HomeActivity extends AppCompatActivity {
             public void run() {
                 Intent home_intent = new Intent(HomeActivity.this,IntroActivity.class);
                 startActivity(home_intent);
+                overridePendingTransition(0,0);
+
                 finish();
             }
         },SPLASH_TIME_OUT);

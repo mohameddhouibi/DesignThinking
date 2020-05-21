@@ -189,6 +189,9 @@ public class Step1Activity extends AppCompatActivity {
                                 Intent i = new Intent(Step1Activity.this, ChatStepActivity.class);
                                 i.putExtra("discussion",roomname+"Step1");
                                 startActivity(i);
+                                overridePendingTransition(0,0);
+
+
                             }
                         });
             }

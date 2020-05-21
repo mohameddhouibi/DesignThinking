@@ -4,29 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu.NotificationsActivity"
-    android:background="@drawable/back"
-
-    >
+    tools:context=".Menu.NotificationsActivity">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerinvitations"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_nav"
+        android:background="@color/colorWhite"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <RelativeLayout
+                android:id="@+id/Relative1"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                >
+
+                <ImageView
+                    android:id="@+id/bar"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/im1"></ImageView>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications "
+                    android:textSize="20dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_toRightOf="@+id/bar"></TextView>
+                <TextView
+                    android:layout_marginTop="1dp"
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/txx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="your notifications and invitations"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textStyle="normal"
+                    android:textAlignment="center"
+                    android:layout_below="@+id/tx"
+                    android:layout_toRightOf="@+id/bar"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/aaa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/Relative1"
+                android:layout_marginTop="10dp"
+                >
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerinvitations"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    tools:listitem="@layout/item_notification"
+                    ></androidx.recyclerview.widget.RecyclerView>
+
+
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
 
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/nav"
-        app:itemTextColor="#FFF"
-        app:menu="@menu/bottom_navigation"
-        >
-
+        android:background="@drawable/concept"
+        app:itemTextColor="#5400E8"
+        app:menu="@menu/bottom_navigation">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 </RelativeLayout>
