@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +29,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.Entity.User;
+import com.muhameddhouibi.designthinking.Menu.FriendsActivity;
+import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
+import com.muhameddhouibi.designthinking.Menu.NotificationsActivity;
+import com.muhameddhouibi.designthinking.Menu.ProfileActivity;
+import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -47,6 +54,43 @@ public class WorkshopActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_workshop);
+
+
+
+        // Bottom Navigation //
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.homemenu);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId())
+                {
+                    case R.id.notificationsmenu :
+                        startActivity(new Intent(getApplicationContext(), NotificationsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.friendsmenu :
+                        startActivity(new Intent(getApplicationContext(), FriendsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.homemenu :
+                        startActivity(new Intent(getApplicationContext(), WelcomeHomeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.profilemenu :
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.gamesmenu :
+                        startActivity(new Intent(getApplicationContext(), MyGamesActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+
+                }
+                return false;
+            }
+        });
+        //end Bottom Navigation //
 
 
         firebaseDatabase = FirebaseDatabase.getInstance();

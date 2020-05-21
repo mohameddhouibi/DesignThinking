@@ -1,16 +1,25 @@
 package com.muhameddhouibi.designthinking;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DiffUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.muhameddhouibi.designthinking.Menu.FriendsActivity;
+import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
+import com.muhameddhouibi.designthinking.Menu.NotificationsActivity;
+import com.muhameddhouibi.designthinking.Menu.ProfileActivity;
+import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
 import com.yuyakaido.android.cardstackview.CardStackView;
@@ -31,6 +40,43 @@ public class TestSwiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_swi);
+
+
+
+        // Bottom Navigation //
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.homemenu);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId())
+                {
+                    case R.id.notificationsmenu :
+                        startActivity(new Intent(getApplicationContext(), NotificationsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;                    case R.id.friendsmenu :
+                        startActivity(new Intent(getApplicationContext(), FriendsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.homemenu :
+                        startActivity(new Intent(getApplicationContext(), WelcomeHomeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.profilemenu :
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.gamesmenu :
+                        startActivity(new Intent(getApplicationContext(), MyGamesActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+
+                }
+                return false;
+            }
+        });
+        //end Bottom Navigation //
+
 
         CardStackView cardStackView = findViewById(R.id.card_stack_view);
         manager = new CardStackLayoutManager(this, new CardStackListener() {
