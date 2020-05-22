@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Steps.Step1Activity"
+
     >
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/down"
-        android:background="@color/colorWhite">
+        android:background="@color/colorWhite"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -82,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_below="@+id/goals"
-                    android:background="@drawable/sett"
+                    android:background="@drawable/roff"
                    >
                     <TextView
                         android:id="@+id/title"
@@ -91,7 +93,7 @@
                         android:text="Set The Goal"
                         android:textSize="35dp"
                         android:fontFamily="@font/montserrat"
-                        android:textColor="#0B1A6E"
+                        android:textColor="#FFFFFF"
                         android:layout_centerHorizontal="true"
                         ></TextView>
 
@@ -105,37 +107,37 @@
          android:background="@color/colorWhite">
                 <Button
                     android:id="@+id/instructions"
-                    android:layout_width="300dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/cornerbutton2"
+                    android:layout_width="380dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/cornerbutton3"
                     android:fontFamily="@font/montserrat"
                     android:text="Instructions"
                     android:textColor="#003366"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="60dp"
                     android:layout_centerHorizontal="true"
                     android:textStyle="bold"/>
                 <Button
                     android:id="@+id/Disscussion"
-                    android:layout_width="300dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/cornerbutton2"
+                    android:layout_width="380dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/cornerbutton3"
                     android:fontFamily="@font/montserrat"
                     android:text="Disscussion"
                     android:textColor="#003366"
                     android:layout_below="@+id/instructions"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="30dp"
                     android:layout_centerHorizontal="true"
                     android:textStyle="bold"/>
                 <Button
                     android:id="@+id/Final"
-                    android:layout_width="300dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/cornerbutton2"
+                    android:layout_width="380dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/cornerbutton3"
                     android:fontFamily="@font/montserrat"
                     android:text="Final Decision"
                     android:textColor="#003366"
                     android:layout_below="@+id/Disscussion"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="30dp"
                     android:layout_centerHorizontal="true"
                     android:textStyle="bold"/>
      </RelativeLayout>
