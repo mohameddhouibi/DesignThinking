@@ -84,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_below="@+id/goals"
-                    android:background="@drawable/roff"
+                    android:background="@drawable/sett"
                    >
                     <TextView
                         android:id="@+id/title"
@@ -113,7 +113,7 @@
                     android:fontFamily="@font/montserrat"
                     android:text="Instructions"
                     android:textColor="#003366"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="45dp"
                     android:layout_centerHorizontal="true"
                     android:textStyle="bold"/>
                 <Button

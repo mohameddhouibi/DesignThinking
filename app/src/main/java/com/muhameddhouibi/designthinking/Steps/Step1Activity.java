@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.ChatStepActivity;
 import com.muhameddhouibi.designthinking.R;
+import com.muhameddhouibi.designthinking.TestSwiActivity;
 
 import java.util.HashMap;
 
@@ -47,7 +48,16 @@ public class Step1Activity extends AppCompatActivity {
         Instructions=findViewById(R.id.instructions);
         discussion=findViewById(R.id.Disscussion);
         result=findViewById(R.id.Final);
+        Instructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Step1Activity.this, TestSwiActivity.class);
+                i.putExtra("discussion",roomname+"Step1");
+                startActivity(i);
+                overridePendingTransition(0,0);
 
+            }
+        });
         roomname =  getIntent().getStringExtra("roomName");
 
 
