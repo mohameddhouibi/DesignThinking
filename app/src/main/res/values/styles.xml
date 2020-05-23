@@ -17,4 +17,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme.SliderActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="windowActionBar">false</item>
+
+        <item name="android:windowBackground">@color/black_color</item>
+    </style>
+
 </resources>

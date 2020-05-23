@@ -167,11 +167,13 @@
             android:layout_alignParentEnd="true"></ImageView>
 
         <TextView
+            android:id="@+id/tii"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="60:00"
             android:fontFamily="@font/montserrat"
             android:textStyle="bold"
+            android:visibility="visible"
             android:textSize="25dp"
             android:textColor="#0B1A6E"
             android:layout_centerInParent="true"></TextView>

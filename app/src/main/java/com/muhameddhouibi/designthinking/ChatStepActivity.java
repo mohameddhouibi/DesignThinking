@@ -61,7 +61,7 @@ public class ChatStepActivity extends AppCompatActivity {
                 {
                     sendMessage(message);
 
-
+                    messageEt.setText("");
                 }
             }
         });

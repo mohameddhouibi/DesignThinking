@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,12 +26,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.ChatStepActivity;
 import com.muhameddhouibi.designthinking.Entity.Game;
+import com.muhameddhouibi.designthinking.Entity.Step;
 import com.muhameddhouibi.designthinking.R;
 import com.muhameddhouibi.designthinking.TestSwiActivity;
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
 
 import java.util.HashMap;
 
 public class Step1Activity extends AppCompatActivity {
+
+    private SlidrInterface slidr ;
+    TextView tii;
     Button Instructions ;
     Button discussion ;
     Button result ;
@@ -44,23 +52,39 @@ public class Step1Activity extends AppCompatActivity {
     DatabaseReference playerreff3 ;
     DatabaseReference playerreff4 ;
     DatabaseReference playerreff5 ;
-
+    ImageView redo_btn ;
     Button subBtn  ;
     TextView tx ;
     ImageView closeDialog ;
     Dialog Infodiaog ;
     RatingBar rat ;
+    CountDownTimer countDownTimer ;
+    long tiLeft ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step1);
         Infodiaog = new Dialog(this);
-
+        slidr = Slidr.attach(this);
         Instructions=findViewById(R.id.instructions);
         discussion=findViewById(R.id.Disscussion);
         result=findViewById(R.id.Final);
+        redo_btn= findViewById(R.id.redo_btn);
 
+        tii=findViewById(R.id.tii);
+
+
+        redo_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Step1Activity.this, Step2Activity.class);
+                i.putExtra("discussion",roomname+"Step2");
+                startActivity(i);
+                overridePendingTransition(0,0);
+            }
+        });
 
         Instructions.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -250,11 +274,11 @@ public class Step1Activity extends AppCompatActivity {
         subBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = String.valueOf(rat.getRating());
-                Toast.makeText(getApplicationContext(),s+"Star",Toast.LENGTH_SHORT).show();
                 Infodiaog.dismiss();
             }
         });
         Infodiaog.show();
     }
+
+
 }

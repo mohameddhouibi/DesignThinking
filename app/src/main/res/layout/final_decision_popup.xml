@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_alignParentStart="true"
     android:layout_alignParentEnd="true"
-    app:cardBackgroundColor="@color/colorWhite"
     android:layout_alignParentTop="true"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
@@ -33,15 +32,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:layout_alignParentTop="true"
-                android:background="@drawable/sett">
+                android:background="@drawable/za">
                 <ImageView
                     android:id="@+id/close"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="3dp"
-                    android:layout_alignParentRight="true"
                     android:layout_marginEnd="7dp"
+                    android:layout_marginTop="7dp"
                     android:src="@drawable/ic_close_black_24dp" />
                 <TextView
                     android:id="@+id/title"
@@ -58,7 +56,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="65dp"
                 android:background="@color/colorWhite">
                 <TextView
                     android:id="@+id/tx"
@@ -80,6 +78,7 @@
                     android:layout_marginTop="35dp"
                     android:id="@+id/rat"
                     android:numStars="5"
+                    android:outlineAmbientShadowColor="#FFC107"
                     android:stepSize="0.5">
 
                 </RatingBar>

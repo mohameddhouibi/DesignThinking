@@ -189,12 +189,24 @@ public class WorkshopActivity extends AppCompatActivity  {
         confbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                if (info1.isEmpty() || password.isEmpty()) {
+//                    showMessage("Please Verify All Field");
+//                    btnLogin.setVisibility(View.VISIBLE);
+//                    loginProgress.setVisibility(View.INVISIBLE);
+//                }
+//                else
+//                {
+//                    signIn(mail,password);
+//                }
+//
                 create_game.setText("Creating your room");
                 create_game.setEnabled(false);
                 final String Game_id= rooms.push().getKey();
                 final String game_name = info1.getText().toString();
                 final String nb = info3.getText().toString();
                 int finalValue = Integer.parseInt(nb);
+
 
                 final String Payer1_name =mAuth.getCurrentUser().getDisplayName();
                 Game game = new Game(game_name,Game_id,Payer1_name,null,null,null,null,finalValue);
