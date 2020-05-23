@@ -1,130 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="400dp"
+    android:layout_height="500dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true"
+    app:cardBackgroundColor="@color/colorWhite"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
     android:layout_gravity="center"
-    android:layout_marginStart="10dp">
 
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/ic_close_black_24dp"
-    android:layout_alignParentEnd="true"
-    android:layout_marginTop="5dp">
-
-</ImageView>
+    >
 
 
     
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        app:cardBackgroundColor="@color/colorWhite"
-        android:layout_alignParentTop="true">
+
 
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="400dp"
+            android:layout_height="500dp"
 
 
             >
-
             <ImageView
                 android:id="@+id/close"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginEnd="0dp"
-                android:layout_marginRight="0dp"
+                android:layout_marginEnd="7dp"
                 android:src="@drawable/ic_close_black_24dp" />
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Create a new room"
-                android:textSize="25dp"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"></TextView>
 
-            <EditText
-                android:id="@+id/info1"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Room Name"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/title"
-                android:layout_marginTop="35dp"
-                ></EditText>
-            <EditText
-                android:id="@+id/info2"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Privacy code"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info1"
-                android:layout_marginTop="35dp"
-                ></EditText>
-            <EditText
-                android:id="@+id/info3"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Number of players"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info2"
-                android:layout_marginTop="35dp"
-                ></EditText>
-            <EditText
-                android:id="@+id/info4"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Subject"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info3"
-                android:layout_marginTop="35dp"
-                ></EditText>
-            <Button
-                android:id="@+id/conf"
-                android:layout_below="@id/info4"
-                android:layout_marginTop="35dp"
-                android:text="Confirm"
-                android:layout_centerHorizontal="true"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cornerbutton2"
-                android:fontFamily="@font/montserrat"
-                android:textAllCaps="false"
-                android:textColor="#003366">
-            </Button>
-            <Button
-                android:id="@+id/annul"
-                android:layout_below="@id/conf"
-                android:layout_marginTop="15dp"
-                android:text="Cancel"
-                android:layout_centerHorizontal="true"
-                android:layout_width="190dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cornerbutton1"
-                android:fontFamily="@font/montserrat"
-                android:textAllCaps="false"
-                android:textColor="#FFFF">
-            </Button>
+            <RelativeLayout
+                android:id="@+id/e1"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/sett">
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Final Decision"
+                    android:textSize="25dp"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="220dp"
+                android:background="@color/colorWhite">
+                <TextView
+                    android:id="@+id/tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Step One "
+                    android:textAlignment="center"
+                    android:layout_marginTop="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="30dp"
+                    android:textStyle="bold"></TextView>
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tx"
+                    android:layout_marginTop="35dp"
+                    android:id="@+id/rat"
+                    android:numStars="5"
+                    android:stepSize="0.5">
+
+                </RatingBar>
+
+
+                <Button
+                    android:id="@+id/confff"
+                    android:text="Submit"
+                    android:layout_below="@+id/rat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="250dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cornerbutton2"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginBottom="15dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="#585B5E">
+                </Button>
+            </RelativeLayout>
+
+
+
 
         </RelativeLayout>
         
         
-    </androidx.cardview.widget.CardView>
 
-</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -3,10 +3,15 @@ package com.muhameddhouibi.designthinking.Steps;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -18,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.ChatStepActivity;
+import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.R;
 import com.muhameddhouibi.designthinking.TestSwiActivity;
 
@@ -39,11 +45,17 @@ public class Step1Activity extends AppCompatActivity {
     DatabaseReference playerreff4 ;
     DatabaseReference playerreff5 ;
 
+    Button subBtn  ;
+    TextView tx ;
+    ImageView closeDialog ;
+    Dialog Infodiaog ;
+    RatingBar rat ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step1);
+        Infodiaog = new Dialog(this);
 
         Instructions=findViewById(R.id.instructions);
         discussion=findViewById(R.id.Disscussion);
@@ -206,5 +218,30 @@ public class Step1Activity extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void InformationAlertBuilder ()
+    {
+        Infodiaog.setContentView(R.layout.final_decision_popup);
+        subBtn= Infodiaog.findViewById(R.id.confff);
+        tx= Infodiaog.findViewById(R.id.tx);
+        rat=findViewById(R.id.rat);
+
+        closeDialog = (ImageView) Infodiaog.findViewById(R.id.close);
+        closeDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Infodiaog.dismiss();
+            }
+        });
+
+        subBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = String.valueOf(rat.getRating());
+                Toast.makeText(getApplicationContext(),s+"Star",Toast.LENGTH_SHORT).show();
+            }
+        });
+        Infodiaog.show();
     }
 }

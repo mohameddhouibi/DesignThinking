@@ -60,6 +60,7 @@ public class WorkshopActivity extends AppCompatActivity  {
 
         setContentView(R.layout.activity_workshop);
 
+        Infodiaog = new Dialog(this);
 
 
         // Bottom Navigation //
@@ -160,7 +161,7 @@ public class WorkshopActivity extends AppCompatActivity  {
 
     private void InformationAlertBuilder ()
     {
-        Infodiaog.setContentView(R.layout.final_decision_popup);
+        Infodiaog.setContentView(R.layout.create_game_popup);
         confbtn=(Button) Infodiaog.findViewById(R.id.conf);
         annulbtn=(Button) Infodiaog.findViewById(R.id.annul);
         info1 = (EditText) Infodiaog.findViewById(R.id.info1);
@@ -186,12 +187,19 @@ public class WorkshopActivity extends AppCompatActivity  {
                 create_game.setText("Creating your room");
                 create_game.setEnabled(false);
                 final String Game_id= rooms.push().getKey();
-                final String game_name = mAuth.getCurrentUser().getDisplayName();
+                final String game_name = info1.getText().toString();
+                final String nb = info3.getText().toString();
+                int finalValue = Integer.parseInt(nb);
+
                 final String Payer1_name =mAuth.getCurrentUser().getDisplayName();
-                Game game = new Game(game_name,Game_id,Payer1_name,null,null,null,null,1);
+                Game game = new Game(game_name,Game_id,Payer1_name,null,null,null,null,finalValue);
                 rooms.child(game_name).setValue(game);
                 Toast toast=Toast. makeText(getApplicationContext(),"Done !",Toast. LENGTH_SHORT);
                 toast. show();
+
+
+
+
             }
         });
         Infodiaog.show();
