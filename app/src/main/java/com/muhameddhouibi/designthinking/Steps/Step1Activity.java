@@ -79,7 +79,6 @@ public class Step1Activity extends AppCompatActivity {
         Discussions=FirebaseDatabase.getInstance().getReference("Discussions");
         mAuth = FirebaseAuth.getInstance();
         final String Discussion_id= Discussions.push().getKey();
-        InformationAlertBuilder ();
         result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
