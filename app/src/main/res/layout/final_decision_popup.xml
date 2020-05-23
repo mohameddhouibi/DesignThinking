@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="400dp"
-    android:layout_height="500dp"
+    android:layout_height="wrap_content"
     android:layout_alignParentStart="true"
     android:layout_alignParentEnd="true"
     app:cardBackgroundColor="@color/colorWhite"
@@ -21,7 +21,7 @@
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="400dp"
-            android:layout_height="500dp"
+            android:layout_height="wrap_content"
 
 
             >
@@ -39,7 +39,7 @@
                 android:id="@+id/e1"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:layout_marginTop="150dp"
+                android:layout_alignParentTop="true"
                 android:background="@drawable/sett">
                 <TextView
                     android:id="@+id/title"
@@ -56,7 +56,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_marginTop="220dp"
+                android:layout_marginTop="70dp"
                 android:background="@color/colorWhite">
                 <TextView
                     android:id="@+id/tx"
