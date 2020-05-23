@@ -84,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_below="@+id/goals"
-                    android:background="@drawable/sett"
+                    android:background="@drawable/tyr"
                    >
                     <TextView
                         android:id="@+id/title"
@@ -92,6 +92,7 @@
                         android:layout_height="wrap_content"
                         android:text="Set The Goal"
                         android:textSize="35dp"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/montserrat"
                         android:textColor="#FFFFFF"
                         android:layout_centerHorizontal="true"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -48,7 +50,10 @@ public class WorkshopActivity extends AppCompatActivity  {
     private FirebaseRecyclerAdapter<Game,MyGameViewHolder> adapter;
     DatabaseReference rooms ;
     FirebaseDatabase firebaseDatabase ;
-
+    Button confbtn , annulbtn ;
+    EditText info1 , info2 , info3 , info4 ;
+    ImageView closeDialog ;
+    Dialog Infodiaog ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,6 +151,38 @@ public class WorkshopActivity extends AppCompatActivity  {
         create_game.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                InformationAlertBuilder ();
+
+            }
+        });
+    }
+
+    private void InformationAlertBuilder ()
+    {
+        Infodiaog.setContentView(R.layout.final_decision_popup);
+        confbtn=(Button) Infodiaog.findViewById(R.id.conf);
+        annulbtn=(Button) Infodiaog.findViewById(R.id.annul);
+        info1 = (EditText) Infodiaog.findViewById(R.id.info1);
+        info2 = (EditText) Infodiaog.findViewById(R.id.info2);
+        info3 = (EditText) Infodiaog.findViewById(R.id.info3);
+        info4 = (EditText) Infodiaog.findViewById(R.id.info4);
+        closeDialog = (ImageView) Infodiaog.findViewById(R.id.close);
+        closeDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Infodiaog.dismiss();
+            }
+        });
+        annulbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Infodiaog.dismiss();
+            }
+        });
+        confbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 create_game.setText("Creating your room");
                 create_game.setEnabled(false);
                 final String Game_id= rooms.push().getKey();
@@ -153,9 +190,10 @@ public class WorkshopActivity extends AppCompatActivity  {
                 final String Payer1_name =mAuth.getCurrentUser().getDisplayName();
                 Game game = new Game(game_name,Game_id,Payer1_name,null,null,null,null,1);
                 rooms.child(game_name).setValue(game);
+                Toast toast=Toast. makeText(getApplicationContext(),"Done !",Toast. LENGTH_SHORT);
+                toast. show();
             }
         });
+        Infodiaog.show();
     }
-
-
 }

@@ -100,7 +100,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:textColor="@color/colorWhite"
-            android:background="@drawable/bt_back"
+            android:background="@drawable/cornerbutton1"
             android:text="Create New Room"></Button>
 
 
