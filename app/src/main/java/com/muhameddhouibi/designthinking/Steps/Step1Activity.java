@@ -60,6 +60,8 @@ public class Step1Activity extends AppCompatActivity {
         Instructions=findViewById(R.id.instructions);
         discussion=findViewById(R.id.Disscussion);
         result=findViewById(R.id.Final);
+
+
         Instructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +79,15 @@ public class Step1Activity extends AppCompatActivity {
         Discussions=FirebaseDatabase.getInstance().getReference("Discussions");
         mAuth = FirebaseAuth.getInstance();
         final String Discussion_id= Discussions.push().getKey();
+        InformationAlertBuilder ();
+        result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InformationAlertBuilder ();
+            }
+        });
+
+
         discussion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,6 +229,8 @@ public class Step1Activity extends AppCompatActivity {
                         });
             }
         });
+
+
     }
 
     private void InformationAlertBuilder ()
@@ -240,6 +253,7 @@ public class Step1Activity extends AppCompatActivity {
             public void onClick(View v) {
                 String s = String.valueOf(rat.getRating());
                 Toast.makeText(getApplicationContext(),s+"Star",Toast.LENGTH_SHORT).show();
+                Infodiaog.dismiss();
             }
         });
         Infodiaog.show();

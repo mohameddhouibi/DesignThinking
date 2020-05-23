@@ -169,18 +169,23 @@ public class WorkshopActivity extends AppCompatActivity  {
         info3 = (EditText) Infodiaog.findViewById(R.id.info3);
         info4 = (EditText) Infodiaog.findViewById(R.id.info4);
         closeDialog = (ImageView) Infodiaog.findViewById(R.id.close);
+
+
         closeDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Infodiaog.dismiss();
             }
         });
+
         annulbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Infodiaog.dismiss();
             }
         });
+
+
         confbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,7 +201,7 @@ public class WorkshopActivity extends AppCompatActivity  {
                 rooms.child(game_name).setValue(game);
                 Toast toast=Toast. makeText(getApplicationContext(),"Done !",Toast. LENGTH_SHORT);
                 toast. show();
-
+                Infodiaog.dismiss();
 
 
 
