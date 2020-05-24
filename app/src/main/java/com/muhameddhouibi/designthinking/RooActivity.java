@@ -30,6 +30,7 @@ import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
 import com.muhameddhouibi.designthinking.Menu.NotificationsActivity;
 import com.muhameddhouibi.designthinking.Menu.ProfileActivity;
 import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
+import com.muhameddhouibi.designthinking.Phases.Ideation;
 import com.muhameddhouibi.designthinking.Phases.Inspiration;
 import com.muhameddhouibi.designthinking.Steps.Step1Activity;
 
@@ -232,7 +233,7 @@ public class RooActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent i = new Intent (RooActivity.this, Inspiration.class);
+                final Intent i = new Intent (RooActivity.this, Ideation.class);
                 if(roomnamea == null){
                     RoomNameFinal = roomnamea2 ;
                 }
