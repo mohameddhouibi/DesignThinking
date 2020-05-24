@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YesNoQstActivity">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav"
+        android:background="#F3F2F2"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/Relative1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp">
+                <ImageView
+                    android:id="@+id/bar"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/im1"></ImageView>
+
+                <TextView
+                    android:id="@+id/tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@+id/bar"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Yes Or No Questions"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/txx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tx"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@+id/bar"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Simple list of question that helps you get in touch with the Design Thinking procces"
+                    android:textSize="15dp"
+                    android:textStyle="normal"></TextView>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/aaa"
+                android:layout_below="@id/Relative1"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listquestions"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/item_qst"
+
+                    ></androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/confff"
+                    android:text="Submit"
+                    android:layout_below="@+id/listgames"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="250dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cornerbutton2"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginBottom="15dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="#585B5E">
+                </Button>
+            </RelativeLayout>
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </ScrollView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/concept"
+        app:itemTextColor="#5400E8"
+        app:menu="@menu/bottom_navigation">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>

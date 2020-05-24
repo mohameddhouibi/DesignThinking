@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/q1"
+        android:background="@drawable/cornerbutton">
+        <TextView
+            android:id="@+id/qst1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Q1"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/qst11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="The Question"
+            android:textSize="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="normal"></TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/cornerbutton3"
+            android:layout_below="@+id/qst11"
+            android:layout_marginTop="30dp"
+            android:text="Yes"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:id="@+id/yesbtn"></Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/cornerbutton3"
+        android:layout_below="@+id/yesbtn"
+        android:layout_marginTop="10dp"
+        android:text="No"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="bold"
+            android:id="@+id/nobtn"></Button>
+    </RelativeLayout>

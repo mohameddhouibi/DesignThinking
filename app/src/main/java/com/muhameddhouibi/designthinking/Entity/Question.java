@@ -1,26 +1,25 @@
 package com.muhameddhouibi.designthinking.Entity;
 
 public class Question {
-    String QstId ;
+    String Qstnbr ;
     String Question ;
-    String True_Flase ;
+    String Username;
 
     public Question() {
-
     }
 
-    public Question(String qstId, String question, String true_Flase) {
-        QstId = qstId;
+    public Question(String qstnbr, String question, String username) {
+        Qstnbr = qstnbr;
         Question = question;
-        True_Flase = true_Flase;
+        Username=username;
     }
 
-    public String getQstId() {
-        return QstId;
+    public String getQstnbr() {
+        return Qstnbr;
     }
 
-    public void setQstId(String qstId) {
-        QstId = qstId;
+    public void setQstnbr(String qstnbr) {
+        Qstnbr = qstnbr;
     }
 
     public String getQuestion() {
@@ -31,11 +30,11 @@ public class Question {
         Question = question;
     }
 
-    public String getTrue_Flase() {
-        return True_Flase;
+    public String getUsername() {
+        return Username;
     }
 
-    public void setTrue_Flase(String true_Flase) {
-        True_Flase = true_Flase;
+    public void setUsername(String username) {
+        Username = username;
     }
 }
