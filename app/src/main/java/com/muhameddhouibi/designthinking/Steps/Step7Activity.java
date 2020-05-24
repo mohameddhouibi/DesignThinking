@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,6 +27,7 @@ import com.muhameddhouibi.designthinking.Discussions.Chat5Activity;
 import com.muhameddhouibi.designthinking.Discussions.Chat7Activity;
 import com.muhameddhouibi.designthinking.Instructions.Instruction5Activity;
 import com.muhameddhouibi.designthinking.Instructions.Instruction7Activity;
+import com.muhameddhouibi.designthinking.Phases.Implimentation;
 import com.muhameddhouibi.designthinking.R;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
@@ -100,7 +102,7 @@ public class Step7Activity extends AppCompatActivity {
         redo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Step7Activity.this, Step8Activity.class);
+                Intent i = new Intent(Step7Activity.this, Implimentation.class);
                 i.putExtra("discussion",roomname);
                 startActivity(i);
                 overridePendingTransition(0,0);

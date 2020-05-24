@@ -42,7 +42,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@+id/bar"
                     android:fontFamily="@font/montserrat"
-                    android:text="Ideation phase "
+                    android:text="Inspiration phase "
                     android:textAlignment="center"
                     android:textSize="20dp"
                     android:textStyle="bold"></TextView>
@@ -56,7 +56,7 @@
                     android:layout_marginTop="1dp"
                     android:layout_toRightOf="@+id/bar"
                     android:fontFamily="@font/montserrat"
-                    android:text="It is essential to start your innovation journey with a clear and concrete innovation."
+                    android:text="You're allowd to scream, you're allowed to cry, but do not give up"
                     android:textSize="15dp"
                     android:textStyle="normal"></TextView>
 
@@ -77,10 +77,11 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
                     android:layout_alignParentRight="true"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginLeft="0dp"
-                    android:src="@drawable/idea"></ImageView>
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/nspiration"></ImageView>
             </RelativeLayout>
 
 

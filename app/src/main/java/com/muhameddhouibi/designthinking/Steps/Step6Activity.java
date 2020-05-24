@@ -28,6 +28,7 @@ import com.muhameddhouibi.designthinking.Discussions.Chat7Activity;
 import com.muhameddhouibi.designthinking.Instructions.Instruction5Activity;
 import com.muhameddhouibi.designthinking.Instructions.Instruction6Activity;
 import com.muhameddhouibi.designthinking.Phases.Ideation;
+import com.muhameddhouibi.designthinking.Phases.Inspiration;
 import com.muhameddhouibi.designthinking.R;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
@@ -102,7 +103,7 @@ public class Step6Activity extends AppCompatActivity {
         redo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Step6Activity.this, Ideation.class);
+                Intent i = new Intent(Step6Activity.this, Inspiration.class);
                 i.putExtra("discussion",roomname);
                 startActivity(i);
                 overridePendingTransition(0,0);
