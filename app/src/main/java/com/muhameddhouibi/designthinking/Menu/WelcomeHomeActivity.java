@@ -22,6 +22,7 @@ import com.muhameddhouibi.designthinking.Intro.LoginActivity;
 import com.muhameddhouibi.designthinking.R;
 import com.muhameddhouibi.designthinking.TestSwiActivity;
 import com.muhameddhouibi.designthinking.WorkshopActivity;
+import com.muhameddhouibi.designthinking.YesNoQstActivity;
 
 public class WelcomeHomeActivity extends AppCompatActivity {
 
@@ -83,7 +84,7 @@ public class WelcomeHomeActivity extends AppCompatActivity {
         introduction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(WelcomeHomeActivity.this, TestSwiActivity.class);
+                Intent i = new Intent(WelcomeHomeActivity.this, YesNoQstActivity.class);
                 startActivity(i);
                 overridePendingTransition(0,0);
 

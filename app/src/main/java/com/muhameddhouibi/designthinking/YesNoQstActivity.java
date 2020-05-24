@@ -39,7 +39,7 @@ public class YesNoQstActivity extends AppCompatActivity {
 
         questions=FirebaseDatabase.getInstance().getReference("Questions");
 
-        recyclerView = findViewById(R.id.listgames);
+        recyclerView = findViewById(R.id.listquestions);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -50,8 +50,8 @@ public class YesNoQstActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull final MyQstViewHolder holder, int position, @NonNull Question model) {
                 final String qst_nbr = model.getQstnbr();
                 final String qst = model.getQuestion();
-                holder.qst_nbr.setText("Q"+qst_nbr);
-                holder.qst_txt.setText(qst);
+                holder.qst_nbr.setText("Q1");
+                holder.qst_txt.setText("jgvhjvbkvhk");
                 holder.btn_no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -64,10 +64,7 @@ public class YesNoQstActivity extends AppCompatActivity {
                         holder.btn_yes.setBackground(Drawable.createFromPath("@drawable/cornerbutton4"));
                     }
                 });
-
-
             }
-
             @NonNull
             @Override
             public MyQstViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

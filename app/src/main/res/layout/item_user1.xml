@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="67dp"
     android:background="@drawable/user"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
     android:layout_marginBottom="20dp"
+    android:layout_marginTop="5dp"
     android:orientation="vertical"
     android:id="@+id/item"
     android:padding="6dp">

@@ -11,7 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".YesNoQstActivity"></activity>
+        <activity android:name=".Instructions.Instruction5Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" ></activity>
+        <activity android:name=".Instructions.Instruction4Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Instructions.Instruction3Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"  />
+        <activity android:name=".Discussions.Chat5Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"  />
+        <activity android:name=".Discussions.Chat4Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Discussions.Chat3Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Discussions.Chat2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Instructions.Instruction2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".YesNoQstActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ChatStepActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

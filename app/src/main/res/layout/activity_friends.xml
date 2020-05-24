@@ -62,8 +62,8 @@
 
             <RelativeLayout
                 android:id="@+id/aaa"
-                android:layout_width="402dp"
-                android:layout_height="588dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_below="@id/Relative1"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.app.TaskInfo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -58,8 +59,7 @@ public class Step1Activity extends AppCompatActivity {
     ImageView closeDialog ;
     Dialog Infodiaog ;
     RatingBar rat ;
-    CountDownTimer countDownTimer ;
-    long tiLeft ;
+    long tiLeft  ;
 
 
     @Override
@@ -72,17 +72,44 @@ public class Step1Activity extends AppCompatActivity {
         discussion=findViewById(R.id.Disscussion);
         result=findViewById(R.id.Final);
         redo_btn= findViewById(R.id.redo_btn);
+        roomname =  getIntent().getStringExtra("roomName");
 
         tii=findViewById(R.id.tii);
+
+        CountDownTimer countDownTimer = new CountDownTimer(900000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tiLeft = millisUntilFinished ;
+                updatetimer();
+            }
+
+            private void updatetimer() {
+                int minutes = (int) (tiLeft / 60000);
+                int seconds = (int) (tiLeft % 60000 / 1000);
+                String TimeLeftText ;
+                TimeLeftText =""+minutes+":"+seconds;
+                tii.setText(TimeLeftText+seconds);
+                if (seconds<10)
+                    TimeLeftText =""+minutes+":0"+seconds;
+                    tii.setText(TimeLeftText);
+
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        countDownTimer.start();
 
 
         redo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Step1Activity.this, Step2Activity.class);
-                i.putExtra("discussion",roomname+"Step2");
+                i.putExtra("discussion",roomname);
                 startActivity(i);
-                overridePendingTransition(0,0);
+                overridePendingTransition(3,3);
             }
         });
 
@@ -96,7 +123,6 @@ public class Step1Activity extends AppCompatActivity {
 
             }
         });
-        roomname =  getIntent().getStringExtra("roomName");
 
 
         Toast toast = Toast. makeText(this,roomname , Toast.LENGTH_SHORT); toast. show();

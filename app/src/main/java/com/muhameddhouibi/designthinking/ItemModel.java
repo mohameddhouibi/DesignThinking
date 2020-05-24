@@ -1,6 +1,6 @@
 package com.muhameddhouibi.designthinking;
 
-class ItemModel {
+public class ItemModel {
     private int image;
     private String nama, usia, kota;
 
