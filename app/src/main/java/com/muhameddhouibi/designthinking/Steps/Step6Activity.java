@@ -23,9 +23,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.Discussions.Chat5Activity;
+import com.muhameddhouibi.designthinking.Discussions.Chat6Activity;
 import com.muhameddhouibi.designthinking.Discussions.Chat7Activity;
 import com.muhameddhouibi.designthinking.Instructions.Instruction5Activity;
 import com.muhameddhouibi.designthinking.Instructions.Instruction6Activity;
+import com.muhameddhouibi.designthinking.Phases.Ideation;
 import com.muhameddhouibi.designthinking.R;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
@@ -100,7 +102,7 @@ public class Step6Activity extends AppCompatActivity {
         redo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Step6Activity.this, Step7Activity.class);
+                Intent i = new Intent(Step6Activity.this, Ideation.class);
                 i.putExtra("discussion",roomname);
                 startActivity(i);
                 overridePendingTransition(0,0);
@@ -139,7 +141,7 @@ public class Step6Activity extends AppCompatActivity {
                 hashMap.put("discussionId",Discussion_id);
                 hashMap.put("StepNum","1");
                 hashMap.put("RoomName",roomname);
-                Discussions.child(roomname+"Step7").setValue(hashMap)
+                Discussions.child(roomname+"Step6").setValue(hashMap)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -263,7 +265,7 @@ public class Step6Activity extends AppCompatActivity {
                                 hashMap1.put("Player4",a4);
                                 hashMap1.put("Player5",a5);
                                 Discussions.child(roomname+"Step5").child("Participants").setValue(hashMap1);
-                                Intent i = new Intent(Step6Activity.this, Chat7Activity.class);
+                                Intent i = new Intent(Step6Activity.this, Chat6Activity.class);
                                 i.putExtra("discussion",roomname+"Step6");
                                 startActivity(i);
                                 overridePendingTransition(0,0);

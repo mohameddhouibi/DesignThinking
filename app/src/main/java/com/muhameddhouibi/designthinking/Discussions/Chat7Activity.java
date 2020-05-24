@@ -39,7 +39,7 @@ public class Chat7Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat5);
+        setContentView(R.layout.activity_chat7);
         discussion  = getIntent().getStringExtra("discussion");
         mAuth = FirebaseAuth.getInstance();
         loadGroupeMessages();

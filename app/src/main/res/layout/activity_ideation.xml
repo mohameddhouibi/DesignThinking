@@ -1,9 +1,286 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+
     tools:context=".Phases.Ideation">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/startt"
+        android:background="@color/colorWhite"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/Relative1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="10dp">
+
+                <ImageView
+                    android:id="@+id/bar"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/im1"></ImageView>
+
+                <TextView
+                    android:id="@+id/tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/bar"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Ideation phase "
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/txx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tx"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@+id/bar"
+                    android:fontFamily="@font/montserrat"
+                    android:text="It is essential to start your innovation journey with a clear and concrete innovation."
+                    android:textSize="15dp"
+                    android:textStyle="normal"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/za"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/Relative1">
+
+                <ImageView
+                    android:id="@+id/goals"
+                    android:layout_width="match_parent"
+                    android:layout_height="283dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:src="@drawable/idea"></ImageView>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/zaa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/za"
+                android:layout_marginTop="35dp"
+                >
+
+                <ImageView
+                    android:id="@+id/z1"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/circle">
+                </ImageView>
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Exploratory phase"
+                    android:layout_marginTop="2dp"
+                    android:textSize="17dp"
+                    android:layout_toRightOf="@+id/z1"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#192775"
+                    ></TextView>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/zaaa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/zaa"
+                android:layout_marginTop="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/title2"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/circle2">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discuss the problem"
+                    android:layout_marginTop="2dp"
+                    android:textSize="17dp"
+                    android:layout_toRightOf="@+id/title2"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#192775"
+                    ></TextView>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/zaaaa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/zaaa"
+                android:layout_marginTop="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/title3"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/circle3">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bring everything you know to the table "
+                    android:layout_marginTop="2dp"
+                    android:textSize="17dp"
+                    android:layout_toRightOf="@+id/title3"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#192775"
+                    ></TextView>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/zaaaaa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/zaaaa"
+                android:layout_marginTop="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/title4"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/circle4">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Search for the causes"
+                    android:layout_marginTop="2dp"
+                    android:textSize="17dp"
+                    android:layout_toRightOf="@+id/title4"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#192775"
+                    ></TextView>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/zaaaaaa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/zaaaaa"
+                android:layout_marginTop="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/title5"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/circle5">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="keep recording your insights all the time"
+                    android:layout_marginTop="2dp"
+                    android:textSize="17dp"
+                    android:layout_toRightOf="@+id/title5"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#192775"
+                    ></TextView>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/zaaaaaaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/zaaaaaa"
+                android:layout_marginTop="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/title6"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/circle6">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Avoid thinking about solutions and focus on the problem"
+                    android:layout_marginTop="2dp"
+                    android:textSize="17dp"
+                    android:layout_toRightOf="@+id/title6"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#192775"
+                    ></TextView>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/startt"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/cornerbutton35"
+        android:fontFamily="@font/montserrat"
+        android:text="Start"
+        android:textSize="18dp"
+        android:textColor="#041570"
+         />
+
+
+</RelativeLayout>
