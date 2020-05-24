@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Discussions.Chat9Activity">
+
+    <RelativeLayout
+        android:id="@+id/r5"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp">
+
+        <ImageView
+            android:id="@+id/bar"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/im1"></ImageView>
+
+        <TextView
+            android:id="@+id/tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/bar"
+            android:fontFamily="@font/montserrat"
+            android:text="Step Nine "
+            android:textAlignment="center"
+            android:textColor="@color/black_color"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/txx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tx"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_toRightOf="@+id/bar"
+            android:fontFamily="@font/montserrat"
+            android:text="Discussion"
+            android:textSize="15dp"
+            android:textStyle="normal"></TextView>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ChatRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chatlayout"
+        app:stackFromEnd="true"
+        android:layout_below="@+id/r5"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_groupchat_left">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/chatlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/attch_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:src="@drawable/ic_attach_file_black_24dp"></ImageButton>
+
+        <EditText
+            android:id="@+id/messageEt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Start Typing..."
+            android:inputType="textCapSentences|textImeMultiLine"></EditText>
+
+        <ImageButton
+            android:id="@+id/send_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_send_black_24dp"
+            android:background="@null">
+        </ImageButton>
+
+
+    </LinearLayout>
+</RelativeLayout>

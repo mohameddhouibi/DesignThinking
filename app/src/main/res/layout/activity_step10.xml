@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Steps.Step6Activity">
+    tools:context=".Steps.Step10Activity">
 
 
 
@@ -42,7 +42,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@+id/bar"
                     android:fontFamily="@font/montserrat"
-                    android:text="Step Six "
+                    android:text="Step X "
                     android:textAlignment="center"
                     android:textSize="20dp"
                     android:textStyle="bold"></TextView>
@@ -85,13 +85,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_below="@+id/goals"
-                    android:background="@drawable/tyr"
+                    android:background="@drawable/sett"
                     >
                     <TextView
                         android:id="@+id/title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Step6 Name "
+                        android:text="STEP X"
                         android:textSize="35dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/montserrat"

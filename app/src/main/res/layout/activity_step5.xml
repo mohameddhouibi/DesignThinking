@@ -42,7 +42,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/bar"
                         android:fontFamily="@font/montserrat"
-                        android:text="Step Two "
+                        android:text="Step Five "
                         android:textAlignment="center"
                         android:textSize="20dp"
                         android:textStyle="bold"></TextView>
@@ -78,7 +78,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginStart="0dp"
                         android:layout_marginLeft="0dp"
-                        android:src="@drawable/pointview"></ImageView>
+                        android:src="@drawable/eez"></ImageView>
 
                     <RelativeLayout
                         android:id="@+id/txxt"

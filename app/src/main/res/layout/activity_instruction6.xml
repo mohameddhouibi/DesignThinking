@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Instructions.Instruction6Activity">
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/Relative1"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        >
+
+        <ImageView
+            android:id="@+id/bar"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/im1"></ImageView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step Six"
+            android:textSize="20dp"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_toRightOf="@+id/bar"></TextView>
+        <TextView
+            android:layout_marginTop="1dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/txx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:textSize="15dp"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:layout_below="@+id/tx"
+            android:layout_toRightOf="@+id/bar"></TextView>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/aaa"
+        android:layout_below="@id/Relative1"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav"
+        >
+
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:id="@+id/card_stack_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/concept"
+        app:itemTextColor="#5400E8"
+        app:menu="@menu/bottom_navigation">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>

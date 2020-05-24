@@ -22,17 +22,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.muhameddhouibi.designthinking.Discussions.Chat10Activity;
 import com.muhameddhouibi.designthinking.Discussions.Chat5Activity;
-import com.muhameddhouibi.designthinking.Discussions.Chat7Activity;
+import com.muhameddhouibi.designthinking.Instructions.Instruction10Activity;
 import com.muhameddhouibi.designthinking.Instructions.Instruction5Activity;
-import com.muhameddhouibi.designthinking.Instructions.Instruction6Activity;
 import com.muhameddhouibi.designthinking.R;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
 
 import java.util.HashMap;
 
-public class Step6Activity extends AppCompatActivity {
+public class Step10Activity extends AppCompatActivity {
     private SlidrInterface slidr ;
     TextView tii;
     Button Instructions ;
@@ -60,7 +60,7 @@ public class Step6Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step6);
+        setContentView(R.layout.activity_step10);
         Infodiaog = new Dialog(this);
         slidr = Slidr.attach(this);
         Instructions=findViewById(R.id.instructions);
@@ -100,7 +100,7 @@ public class Step6Activity extends AppCompatActivity {
         redo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Step6Activity.this, Step7Activity.class);
+                Intent i = new Intent(Step10Activity.this, StepfinalActivity.class);
                 i.putExtra("discussion",roomname);
                 startActivity(i);
                 overridePendingTransition(0,0);
@@ -110,8 +110,8 @@ public class Step6Activity extends AppCompatActivity {
         Instructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Step6Activity.this, Instruction6Activity.class);
-                i.putExtra("discussion",roomname+"Step5");
+                Intent i = new Intent(Step10Activity.this, Instruction10Activity.class);
+                i.putExtra("discussion",roomname+"Step10");
                 startActivity(i);
                 overridePendingTransition(0,0);
 
@@ -139,7 +139,7 @@ public class Step6Activity extends AppCompatActivity {
                 hashMap.put("discussionId",Discussion_id);
                 hashMap.put("StepNum","1");
                 hashMap.put("RoomName",roomname);
-                Discussions.child(roomname+"Step7").setValue(hashMap)
+                Discussions.child(roomname+"Step10").setValue(hashMap)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -263,8 +263,8 @@ public class Step6Activity extends AppCompatActivity {
                                 hashMap1.put("Player4",a4);
                                 hashMap1.put("Player5",a5);
                                 Discussions.child(roomname+"Step5").child("Participants").setValue(hashMap1);
-                                Intent i = new Intent(Step6Activity.this, Chat7Activity.class);
-                                i.putExtra("discussion",roomname+"Step6");
+                                Intent i = new Intent(Step10Activity.this, Chat10Activity.class);
+                                i.putExtra("discussion",roomname+"Step10");
                                 startActivity(i);
                                 overridePendingTransition(0,0);
 
