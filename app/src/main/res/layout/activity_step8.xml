@@ -78,7 +78,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
-                    android:src="@drawable/pointview"></ImageView>
+                    android:src="@drawable/named"></ImageView>
 
                 <RelativeLayout
                     android:id="@+id/txxt"
@@ -91,7 +91,7 @@
                         android:id="@+id/title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="STEP8"
+                        android:text="Scope of Solution"
                         android:textSize="35dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/montserrat"
@@ -156,7 +156,7 @@
         android:id="@+id/down"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/concept"
+        android:background="@drawable/cbackk"
         android:layout_alignParentBottom="true">
 
 

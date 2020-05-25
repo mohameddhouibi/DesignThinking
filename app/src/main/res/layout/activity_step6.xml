@@ -78,20 +78,20 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
-                    android:src="@drawable/eez"></ImageView>
+                    android:src="@drawable/challenge"></ImageView>
 
                 <RelativeLayout
                     android:id="@+id/txxt"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_below="@+id/goals"
-                    android:background="@drawable/tyr"
+                    android:background="@drawable/sett"
                     >
                     <TextView
                         android:id="@+id/title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Step6 Name "
+                        android:text="The challenge "
                         android:textSize="35dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/montserrat"
@@ -156,7 +156,7 @@
         android:id="@+id/down"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/concept"
+        android:background="@drawable/cbackk"
         android:layout_alignParentBottom="true">
 
 
