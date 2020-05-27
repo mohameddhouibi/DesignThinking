@@ -55,6 +55,8 @@
         android:layout_above="@id/bottom_nav">
         <RelativeLayout
             android:layout_width="match_parent"
+            android:background="#FFFFFF"
+
             android:layout_height="match_parent">
 
 
