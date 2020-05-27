@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:id="@+id/user_IV"
+            android:src="@drawable/userphoto">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_TV"
+            android:layout_gravity="center_vertical"
+            android:textSize="18dp"
+            android:textStyle="bold"
+
+            android:fontFamily="@font/montserrat"
+            android:text="Dhouibi Muhamed "></TextView>
+            
+            
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/post"
+            android:background="@drawable/cornerbutton"
+            >
+        <TextView
+            android:id="@+id/secteur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Sector : "></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/secteur"
+                android:fontFamily="@font/montserrat"
+                android:text="Sector"
+                android:id="@+id/sector"
+                android:textColor="#091660"
+                android:textSize="18dp"
+                android:textStyle="bold"></TextView>
+
+
+            <TextView
+                android:id="@+id/problem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_below="@+id/secteur"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Problem : "></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/problem"
+                android:layout_below="@+id/secteur"
+                android:id="@+id/problems"
+                android:fontFamily="@font/montserrat"
+                android:text="The problem"
+                android:textColor="#091660"
+                android:textSize="18dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:id="@+id/idea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_below="@+id/problem"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:textColor="#091660"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:text="The Idea"></TextView>
+
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:text="Date  "></TextView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+         <ImageView
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:id="@+id/like"
+             android:src="@drawable/ic_favorite_border_black_24dp"
+             />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_toEndOf="@+id/like"
+                android:id="@+id/comment"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_comment_black_24dp"
+                >
+         </ImageView>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/save"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_bookmark_border_black_24dp"
+                >
+            </ImageView>
+
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/like_nbr"
+            android:layout_marginStart="8dp"
+            android:textSize="18dp"
+            android:textColor="#091660"
+            android:fontFamily="@font/montserrat"
+            android:text="10 Likes"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comments"
+            android:layout_marginStart="8dp"
+            android:textSize="18dp"
+            android:textColor="#091660"
+            android:fontFamily="@font/montserrat"
+            android:text="View All 20 comments"></TextView>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

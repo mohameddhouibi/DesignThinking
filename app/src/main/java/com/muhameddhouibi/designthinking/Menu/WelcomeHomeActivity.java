@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.muhameddhouibi.designthinking.GloablBrainStorming;
 import com.muhameddhouibi.designthinking.Intro.LoginActivity;
 import com.muhameddhouibi.designthinking.R;
 import com.muhameddhouibi.designthinking.TestSwiActivity;
@@ -31,6 +32,7 @@ public class WelcomeHomeActivity extends AppCompatActivity {
     ImageView introduction,workshop,help,constribute;
     String playerName ;
     TextView tx3 ;
+    TextView txr2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +82,7 @@ public class WelcomeHomeActivity extends AppCompatActivity {
         playerName = mAuth.getCurrentUser().getDisplayName();
         tx3 = findViewById(R.id.tx3);
         tx3.setText(mAuth.getCurrentUser().getDisplayName());
+        txr2=findViewById(R.id.txr2);
 
         introduction.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +107,13 @@ public class WelcomeHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+        txr2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), GloablBrainStorming.class));
+                overridePendingTransition(0,0);
             }
         });
 

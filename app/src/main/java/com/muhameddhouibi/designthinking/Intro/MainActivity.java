@@ -114,20 +114,20 @@ public class MainActivity extends AppCompatActivity {
                     // CreateUserAccount method will try to create the user if the email is valid
 
                     CreateUserAccount(email,name,password);
-                    AddUserToDB();
+                  //  AddUserToDB();
                 }
 
             }
 
-            private void AddUserToDB() {
-                final String Email_add = userEmail.getText().toString();
-                final String name_add = userName.getText().toString();
-                final Boolean statut =false ;
-                String id_add = databaseUsers.push().getKey();
-                User user = new User(id_add,name_add,Email_add,statut);
-                databaseUsers.child(name_add).setValue(user);
-
-            }
+//            private void AddUserToDB() {
+//                final String Email_add = userEmail.getText().toString();
+//                final String name_add = userName.getText().toString();
+//                final Boolean statut =false ;
+//                String id_add = databaseUsers.push().getKey();
+//                User user = new User(id_add,name_add,Email_add,statut);
+//                databaseUsers.child(name_add).setValue(user);
+//
+//            }
         });
 
         ImgUserPhoto = findViewById(R.id.regUserPhoto) ;
@@ -213,6 +213,13 @@ public class MainActivity extends AppCompatActivity {
                                 .setDisplayName(name)
                                 .setPhotoUri(uri)
                                 .build();
+                        final String Email_add = userEmail.getText().toString();
+                        final String name_add = userName.getText().toString();
+                        final Boolean statut =false ;
+                        final String Url = uri.toString() ;
+                        String id_add = databaseUsers.push().getKey();
+                        User user = new User(id_add,name_add,Email_add,statut,Url);
+                        databaseUsers.child(name_add).setValue(user);
 
 
                         currentUser.updateProfile(profleUpdate)

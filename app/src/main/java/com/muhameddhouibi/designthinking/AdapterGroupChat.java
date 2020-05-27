@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -61,11 +62,21 @@ public class AdapterGroupChat extends  RecyclerView.Adapter<AdapterGroupChat.Hol
         String message = chatGroup.getMessage();
         String sender_name = chatGroup.getSender();
         String timestamp = chatGroup.getTimestamp();
-
+        String messageType = chatGroup.getType();
         Calendar cal = Calendar.getInstance(Locale.ENGLISH);
         cal.setTimeInMillis(Long.parseLong(timestamp));
         String dateTime = DateFormat.format("dd/MM/yyyy hh:mm aa",cal).toString();
 
+
+        if(messageType.equals("text"))
+        {
+            holder.messageTv.setVisibility(View.VISIBLE);
+            holder.imageView.setVisibility(View.GONE);
+        }else
+            {
+                holder.messageTv.setVisibility(View.GONE);
+                holder.imageView.setVisibility(View.VISIBLE);
+            }
         holder.NameTv.setText(sender_name);
         holder.messageTv.setText(message);
         holder.timetv.setText(dateTime);
@@ -97,11 +108,13 @@ public class AdapterGroupChat extends  RecyclerView.Adapter<AdapterGroupChat.Hol
     class HolderGroupChat extends RecyclerView.ViewHolder {
 
         private TextView NameTv,messageTv,timetv;
+        private ImageView imageView ;
         public HolderGroupChat(@NonNull View itemView) {
             super(itemView);
             NameTv =itemView.findViewById(R.id.NameTv);
             messageTv=itemView.findViewById(R.id.messageTv);
             timetv=itemView.findViewById(R.id.timetv);
+            imageView = itemView.findViewById(R.id.image_discussion);
         }
     }
 }

@@ -11,23 +11,58 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Steps.StepfinalActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".Steps.Step10Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Steps.Step9Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Steps.Step8Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Instructions.Instruction10Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Instructions.Instruction9Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Instructions.Instruction8Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Instructions.Instruction7Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Instructions.Instruction6Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Phases.Implimentation" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Phases.Ideation" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Phases.Inspiration" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Discussions.Chat10Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Discussions.Chat9Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Discussions.Chat8Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Discussions.Chat7Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Discussions.Chat6Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".GloablBrainStorming" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".Steps.StepfinalActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Steps.Step10Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Steps.Step9Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Steps.Step8Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Instructions.Instruction10Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Instructions.Instruction9Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Instructions.Instruction8Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Instructions.Instruction7Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Instructions.Instruction6Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Phases.Implimentation"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Phases.Ideation"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Phases.Inspiration"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Discussions.Chat10Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Discussions.Chat9Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Discussions.Chat8Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Discussions.Chat7Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Discussions.Chat6Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Instructions.Instruction5Activity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

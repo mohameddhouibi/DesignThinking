@@ -5,17 +5,26 @@ public class User {
     String UserId ;
     String UserName ;
     String UserEmail ;
+    String Url ;
     Boolean Connection ;
 
     public User() {
     }
 
-    public User(String userId, String userName, String userEmail, Boolean connection) {
+    public User(String userId, String userName, String userEmail, Boolean connection,String url) {
         UserId = userId;
         UserName = userName;
         UserEmail = userEmail;
-
         Connection = connection;
+        Url = url ;
+    }
+
+    public String getUrl() {
+        return Url;
+    }
+
+    public void setUrl(String url) {
+        Url = url;
     }
 
     public String getUserId() {
