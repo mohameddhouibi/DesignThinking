@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,9 @@ import com.muhameddhouibi.designthinking.Entity.User;
 import com.muhameddhouibi.designthinking.Menu.NewViewHolder;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import javax.microedition.khronos.opengles.GL;
 
@@ -74,15 +77,21 @@ public class GloablBrainStorming extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull final MyIdeaViewHolder holder, int position, @NonNull final Idea model) {
 
                 firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                publisherInfo(holder.userIV,holder.userTx,model.getUsername());
+                publisherInfo(holder.userIV,holder.useriv,holder.userTx,model.getUsername());
                 holder.sector.setText(model.getSector());
                 holder.problems.setText(model.getProblem());
                 holder.idea.setText(model.getIdea());
                 holder.like_nbr.setText("520");
                 holder.viewAllComments.setText("view all comments");
-                holder.date.setText(model.getDate());
+
                 isLike(model.getId() , holder.like );
                 nbrLike(holder.like_nbr , model.getId());
+
+                String timestamp = model.getDate();
+                Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                cal.setTimeInMillis(Long.parseLong(timestamp));
+                String dateTime = DateFormat.format("dd/MM/yyyy hh:mm aa",cal).toString();
+                holder.date.setText(dateTime);
 
                 holder.like.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -111,7 +120,7 @@ public class GloablBrainStorming extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
     }
-    private void publisherInfo(final ImageView UserIV , final TextView userTV, final String UserName)
+    private void publisherInfo(final ImageView UserIV ,final ImageView UserIV2, final TextView userTV, final String UserName)
     {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(UserName);
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -120,6 +129,7 @@ public class GloablBrainStorming extends AppCompatActivity {
 
                 User user = dataSnapshot.getValue(User.class);
                 Glide.with(getApplicationContext()).load(user.getUrl()).into(UserIV);
+                Glide.with(getApplicationContext()).load(user.getUrl()).into(UserIV2);
                 userTV.setText(user.getUserName());
             }
 

@@ -19,7 +19,9 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+
             android:id="@+id/user_IV"
             android:src="@drawable/userphoto">
 
@@ -30,88 +32,110 @@
             android:layout_height="wrap_content"
             android:id="@+id/user_TV"
             android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
             android:textSize="16dp"
             android:fontFamily="@font/montserrat"
             android:text="Dhouibi Muhamed "></TextView>
-            
+
             
         </LinearLayout>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="-17dp"
+            android:text="Date  "></TextView>
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:id="@+id/post"
             android:background="@drawable/cornerbutton"
             >
-        <TextView
-            android:id="@+id/secteur"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:layout_margin="5dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Sector : "></TextView>
 
-            <TextView
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_toRightOf="@+id/secteur"
-                android:fontFamily="@font/montserrat"
-                android:text="Sector"
-                android:id="@+id/sector"
-                android:textColor="#091660"
-                android:textSize="18dp"
-                android:textStyle="bold"></TextView>
-
-
-            <TextView
-                android:id="@+id/problem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:layout_below="@+id/secteur"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Problem : "></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_toRightOf="@+id/problem"
-                android:layout_below="@+id/secteur"
-                android:id="@+id/problems"
-                android:fontFamily="@font/montserrat"
-                android:text="The problem"
-                android:textColor="#091660"
-                android:textSize="18dp"
-                android:textStyle="bold"></TextView>
-
-            <TextView
-                android:layout_centerInParent="true"
-                android:id="@+id/idea"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:layout_below="@+id/problem"
+                android:background="@drawable/cornerbutton36"
+                android:layout_marginTop="5dp"
+                android:visibility="invisible"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="20dp"
-                android:textColor="#091660"
-                android:textStyle="bold"
-                android:fontFamily="@font/montserrat"
-                android:text="The Idea"></TextView>
+                >
+
+                <TextView
+                    android:id="@+id/sector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Sector"
+                    android:textSize="18dp"></TextView>
+
+            </RelativeLayout>
 
 
-            <TextView
-                android:id="@+id/date"
+
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/montserrat"
-                android:layout_alignParentBottom="true"
+                android:background="@drawable/cornerbutton36"
+                android:visibility="invisible"
+                android:layout_alignParentStart="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/problems"
+                    android:fontFamily="@font/montserrat"
+                    android:text="problem"
+                    android:textSize="18dp"
+                    android:textStyle="bold"></TextView>
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/idea"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Hac ita persuasione reducti intra moenia bellatores obseratis undique portarum aditibus, propugnaculis insistebant et pinnis, congesta undique saxa telaque habentes in promptu, ut si quis se proripuisset interius, multitudine missilium sterneretur et lapidum."
+                    android:textColor="@color/black_color"
+                    android:textSize="18dp"></TextView>
+            </ScrollView>
+
+
+
+            <ImageView
+
+                android:layout_width="100dp"
+                android:layout_height="130dp"
                 android:layout_alignParentEnd="true"
-                android:text="Date  "></TextView>
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ste1">
+
+            </ImageView>
 
         </RelativeLayout>
         <RelativeLayout
@@ -119,22 +143,22 @@
             android:layout_height="wrap_content"
             android:padding="8dp">
          <ImageView
-             android:layout_width="30dp"
+             android:layout_width="25dp"
              android:layout_height="30dp"
              android:id="@+id/like"
              android:src="@drawable/ic_favorite_border_black_24dp"
              />
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="25dp"
                 android:layout_height="30dp"
-                android:layout_toEndOf="@+id/like"
                 android:id="@+id/comment"
-                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/like"
+                android:layout_marginRight="50dp"
                 android:src="@drawable/ic_comment_black_24dp"
                 >
          </ImageView>
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
                 android:id="@+id/save"
@@ -162,8 +186,60 @@
             android:textSize="18dp"
             android:textColor="#091660"
             android:fontFamily="@font/montserrat"
-            android:text="View All 20 comments"></TextView>
+            android:text="View All comments"></TextView>
 
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="8dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/chatlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorWhite"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+
+                android:id="@+id/user_IV2"
+                android:src="@drawable/userphoto">
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <EditText
+                android:id="@+id/cooEt"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Start Typing..."
+                android:inputType="textCapSentences|textImeMultiLine"></EditText>
+
+            <ImageButton
+                android:id="@+id/send_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_send_black_24dp"
+                android:background="@null">
+            </ImageButton>
+
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
 
 
     </LinearLayout>

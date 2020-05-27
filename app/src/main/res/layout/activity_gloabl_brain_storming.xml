@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+
     tools:context=".GloablBrainStorming">
     <RelativeLayout
         android:layout_below="@+id/me"
@@ -12,7 +14,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="10dp"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         >
 
         <ImageView
@@ -38,11 +40,11 @@
             android:id="@+id/txx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select what you want to do"
+            android:text="Use tools to generate ideas and interact with the global community"
             android:textSize="15dp"
             android:fontFamily="@font/montserrat"
             android:textStyle="normal"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:layout_below="@+id/tx"
             android:layout_toRightOf="@+id/bar"></TextView>
 
