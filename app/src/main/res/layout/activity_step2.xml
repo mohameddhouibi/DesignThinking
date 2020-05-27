@@ -155,8 +155,8 @@
     <RelativeLayout
         android:id="@+id/down"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/cbackk"
+        android:layout_height="50dp"
+        android:background="@drawable/concept"
         android:layout_alignParentBottom="true">
 
 

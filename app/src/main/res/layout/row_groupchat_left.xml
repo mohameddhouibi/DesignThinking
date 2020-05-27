@@ -29,12 +29,6 @@
         android:fontFamily="@font/montserrat"
         android:textColor="@color/black_color"></TextView>
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/userphoto"
-        android:id="@+id/image_discussion"
-        ></ImageView>
 
     <TextView
         android:id="@+id/timetv"

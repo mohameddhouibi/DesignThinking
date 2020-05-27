@@ -121,7 +121,7 @@
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/montserrat"
                     android:text="Hac ita persuasione reducti intra intraintraintraintraintraintraintramoenia bellatores obseratis undique portarum aditibus, propugnaculis insistebant et pinnis, congesta undique saxa telaque habentes in promptu, ut si quis se proripuisset interius, multitudine missilium sterneretur et lapidum."
-                    android:textColor="@color/black_color"
+                    android:textColor="#040922"
                     android:textSize="18dp"></TextView>
             </ScrollView>
 
@@ -174,8 +174,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/like_nbr"
             android:layout_marginStart="8dp"
-            android:textSize="18dp"
-            android:textColor="#091660"
+            android:textSize="16dp"
+            android:textColor="#040922"
             android:fontFamily="@font/montserrat"
             android:text="10 Likes"></TextView>
         <TextView
@@ -183,8 +183,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/comments"
             android:layout_marginStart="8dp"
-            android:textSize="18dp"
-            android:textColor="#091660"
+            android:textSize="16dp"
+            android:textColor="#040922"
             android:fontFamily="@font/montserrat"
             android:text="View All comments"></TextView>
 
@@ -226,7 +226,7 @@
                 android:inputType="textCapSentences|textImeMultiLine"></EditText>
 
             <ImageButton
-                android:id="@+id/send_btn"
+                android:id="@+id/send_btnC"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_send_black_24dp"

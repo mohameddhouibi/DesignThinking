@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GloablBrainStorming" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".GlobalBrainstorming.CommentsActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".GlobalBrainstorming.GloablBrainStorming"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Steps.StepfinalActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.GlobalBrainstorming;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.sax.StartElementListener;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,10 +30,14 @@ import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.Entity.Idea;
 import com.muhameddhouibi.designthinking.Entity.User;
+import com.muhameddhouibi.designthinking.IdeaAdapter;
 import com.muhameddhouibi.designthinking.Menu.NewViewHolder;
+import com.muhameddhouibi.designthinking.GlobalBrainstorming.MyIdeaViewHolder;
+import com.muhameddhouibi.designthinking.R;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -46,7 +51,7 @@ public class GloablBrainStorming extends AppCompatActivity {
     private FirebaseUser firebaseUser;
 
     private FirebaseRecyclerOptions<Idea> options;
-    private FirebaseRecyclerAdapter<Idea,MyIdeaViewHolder> adapter;
+    private FirebaseRecyclerAdapter<Idea, MyIdeaViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +91,7 @@ public class GloablBrainStorming extends AppCompatActivity {
 
                 isLike(model.getId() , holder.like );
                 nbrLike(holder.like_nbr , model.getId());
-
+                getcomments(holder.viewAllComments,model.getId());
                 String timestamp = model.getDate();
                 Calendar cal = Calendar.getInstance(Locale.ENGLISH);
                 cal.setTimeInMillis(Long.parseLong(timestamp));
@@ -107,6 +112,38 @@ public class GloablBrainStorming extends AppCompatActivity {
                                 FirebaseDatabase.getInstance().getReference("IdeaReactions").child("likes").child(model.getId())
                                         .child(firebaseUser.getUid()).removeValue();
                         }
+                    }
+                });
+
+                holder.viewAllComments.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent (GloablBrainStorming.this,CommentsActivity.class);
+                        i.putExtra("idea_id",model.getId());
+                        startActivity(i);
+                    }
+                });
+
+
+                holder.send_btnC.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if(holder.comment1.getText().toString().equals(""))
+                        {
+                            Toast.makeText(GloablBrainStorming.this,"can't send empty comment",Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            {
+                                String comment = holder.comment1.getText().toString();
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Comments").child(model.getId());
+                                HashMap<String,Object> hashMap = new HashMap<>();
+                                hashMap.put("comment",comment);
+                                hashMap.put("publisher",firebaseUser.getDisplayName());
+                                reference.push().setValue(hashMap);
+                            }
+
+
                     }
                 });
             }
@@ -159,21 +196,18 @@ public class GloablBrainStorming extends AppCompatActivity {
 
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
     }
-
 private void nbrLike(final TextView likes , String Idea_id) {
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("IdeaReactions").child("likes").child(Idea_id);
     reference.addValueEventListener(new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             likes.setText(dataSnapshot.getChildrenCount()+"likes");
-
         }
 
         @Override
@@ -183,6 +217,22 @@ private void nbrLike(final TextView likes , String Idea_id) {
     });
 
 }
+    private void getcomments(final TextView comments , String Idea_id) {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Comments").child(Idea_id);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                comments.setText("View all the "+dataSnapshot.getChildrenCount()+" Comments");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
 
 
 

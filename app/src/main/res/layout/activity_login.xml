@@ -19,24 +19,34 @@
         android:layout_below="@+id/login_photo"
          />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/azer"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_below="@+id/login_mail">
+
+
+
+
     <EditText
         android:id="@+id/login_password"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/login_mail"
         android:backgroundTint="#003366"
         android:fontFamily="@font/montserrat"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_password"
+        android:layout_below="@+id/azer"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="47dp"
@@ -44,6 +54,8 @@
         android:text="Forgot password?"
         android:textSize="12sp"
         android:textStyle="bold" />
+
+
 
     <Button
         android:id="@+id/loginBtn"

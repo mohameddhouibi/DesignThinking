@@ -67,16 +67,16 @@ public class AdapterGroupChat extends  RecyclerView.Adapter<AdapterGroupChat.Hol
         cal.setTimeInMillis(Long.parseLong(timestamp));
         String dateTime = DateFormat.format("dd/MM/yyyy hh:mm aa",cal).toString();
 
-
-        if(messageType.equals("text"))
-        {
-            holder.messageTv.setVisibility(View.VISIBLE);
-            holder.imageView.setVisibility(View.GONE);
-        }else
-            {
-                holder.messageTv.setVisibility(View.GONE);
-                holder.imageView.setVisibility(View.VISIBLE);
-            }
+//
+//        if(messageType.equals("text"))
+//        {
+//            holder.messageTv.setVisibility(View.VISIBLE);
+//            holder.imageView.setVisibility(View.GONE);
+//        }else
+//            {
+//                holder.messageTv.setVisibility(View.GONE);
+//                holder.imageView.setVisibility(View.VISIBLE);
+//            }
         holder.NameTv.setText(sender_name);
         holder.messageTv.setText(message);
         holder.timetv.setText(dateTime);
@@ -114,7 +114,7 @@ public class AdapterGroupChat extends  RecyclerView.Adapter<AdapterGroupChat.Hol
             NameTv =itemView.findViewById(R.id.NameTv);
             messageTv=itemView.findViewById(R.id.messageTv);
             timetv=itemView.findViewById(R.id.timetv);
-            imageView = itemView.findViewById(R.id.image_discussion);
+         //   imageView = itemView.findViewById(R.id.image_discussion);
         }
     }
 }

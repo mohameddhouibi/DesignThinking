@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
 
-    tools:context=".GloablBrainStorming">
+    tools:context=".GlobalBrainstorming.GloablBrainStorming">
     <RelativeLayout
         android:layout_below="@+id/me"
         android:id="@+id/Relative1"

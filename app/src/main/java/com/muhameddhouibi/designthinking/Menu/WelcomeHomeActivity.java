@@ -18,10 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.GloablBrainStorming;
-import com.muhameddhouibi.designthinking.Intro.LoginActivity;
+import com.muhameddhouibi.designthinking.GlobalBrainstorming.GloablBrainStorming;
 import com.muhameddhouibi.designthinking.R;
-import com.muhameddhouibi.designthinking.TestSwiActivity;
 import com.muhameddhouibi.designthinking.WorkshopActivity;
 import com.muhameddhouibi.designthinking.YesNoQstActivity;
 
