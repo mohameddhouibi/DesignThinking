@@ -8,26 +8,38 @@
     tools:context=".GlobalBrainstorming.CommentsActivity">
 
     <RelativeLayout
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
         android:id="@+id/Relative1"
         android:layout_marginStart="0dp"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         >
 
 
+
+        <ImageView
+            android:id="@+id/bar"
+            android:layout_width="32dp"
+
+            android:layout_height="match_parent"
+            android:src="@drawable/im1"></ImageView>
+
         <TextView
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="5dp"
             android:id="@+id/txback"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Ideas"
-            android:textSize="20dp"
-            android:textColor="#FFC107"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/bar"
             android:fontFamily="@font/montserrat"
+            android:text="Back to ideas "
             android:textAlignment="center"
+            android:textSize="18dp"
             ></TextView>
+
+
+
 
 
     </RelativeLayout>

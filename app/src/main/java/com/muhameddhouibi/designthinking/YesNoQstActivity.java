@@ -48,20 +48,24 @@ public class YesNoQstActivity extends AppCompatActivity {
         adapter=new FirebaseRecyclerAdapter<Question, MyQstViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull final MyQstViewHolder holder, int position, @NonNull Question model) {
-                final String qst_nbr = model.getQstnbr();
-                final String qst = model.getQuestion();
-                holder.qst_nbr.setText("Q1");
-                holder.qst_txt.setText("jgvhjvbkvhk");
+
+                holder.qst_nbre.setText( model.getQstnbr());
+                holder.qst_txte.setText(model.getQuestion());
                 holder.btn_no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        holder.btn_no.setBackground(Drawable.createFromPath("@drawable/cornerbutton4"));
+                     //   holder.btn_no.setBackground(Drawable.createFromPath("@drawable/cornerbutton4"));
+                        holder.btn_no.setBackgroundDrawable(getResources().getDrawable(R.drawable.cornerbutton4));
+                        holder.btn_no.setEnabled(false);
+                        holder.btn_yes.setEnabled(false);
                     }
                 });
                 holder.btn_yes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        holder.btn_yes.setBackground(Drawable.createFromPath("@drawable/cornerbutton4"));
+                        holder.btn_yes.setBackgroundDrawable(getResources().getDrawable(R.drawable.cornerbutton4));
+                        holder.btn_no.setEnabled(false );
+                        holder.btn_yes.setEnabled(false);
                     }
                 });
             }
@@ -69,7 +73,7 @@ public class YesNoQstActivity extends AppCompatActivity {
             @Override
             public MyQstViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_game,parent,false);
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_qst,parent,false);
 
                 return new MyQstViewHolder(v);
             }

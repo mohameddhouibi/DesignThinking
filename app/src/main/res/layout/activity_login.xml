@@ -27,9 +27,6 @@
 
         android:layout_below="@+id/login_mail">
 
-
-
-
     <EditText
         android:id="@+id/login_password"
         android:layout_width="328dp"

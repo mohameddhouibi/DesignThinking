@@ -54,7 +54,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
 
@@ -68,7 +68,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat"
         android:hint="Confirm Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
     <Button

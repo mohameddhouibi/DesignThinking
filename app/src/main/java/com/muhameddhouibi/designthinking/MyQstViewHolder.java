@@ -10,15 +10,15 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyQstViewHolder extends RecyclerView.ViewHolder {
 
 
-    TextView qst_txt,qst_nbr;
+    TextView qst_txte,qst_nbre;
     Button btn_yes , btn_no;
     View view ;
 
     public MyQstViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        qst_txt = itemView.findViewById(R.id.qst11);
-        qst_nbr = itemView.findViewById(R.id.qst1);
+        qst_txte = itemView.findViewById(R.id.qst11);
+        qst_nbre = itemView.findViewById(R.id.qst1);
         btn_yes = itemView.findViewById(R.id.yesbtn);
         btn_no = itemView.findViewById(R.id.nobtn);
         view = itemView ;
