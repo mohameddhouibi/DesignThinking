@@ -78,6 +78,7 @@ public class Chat2Activity extends AppCompatActivity {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        chatGroupList.clear();
 
                         for (DataSnapshot ds:dataSnapshot.getChildren())
                         {

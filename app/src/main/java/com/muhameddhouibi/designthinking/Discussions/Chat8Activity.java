@@ -70,6 +70,7 @@ public class Chat8Activity extends AppCompatActivity {
     }
 
     private void loadGroupeMessages() {
+        chatGroupList.clear();
 
         chatGroupList = new ArrayList<>();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Discussions");

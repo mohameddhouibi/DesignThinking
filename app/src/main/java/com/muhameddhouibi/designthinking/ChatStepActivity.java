@@ -75,7 +75,7 @@ public class ChatStepActivity extends AppCompatActivity {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                        chatGroupList.clear();
                         for (DataSnapshot ds:dataSnapshot.getChildren())
                         {
                             ChatGroup chatGroup = ds.getValue(ChatGroup.class);
