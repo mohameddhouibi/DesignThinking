@@ -36,8 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="7dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="0dp"
 
                 android:src="@drawable/ic_close_black_24dp" />
             <TextView
@@ -67,16 +67,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="35dp"
                 ></EditText>
-            <EditText
-                android:id="@+id/info2"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Privacy code"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info1"
-                android:layout_marginTop="35dp"
-                ></EditText>
+
             <EditText
                 android:id="@+id/info3"
                 android:layout_width="350dp"
@@ -84,7 +75,7 @@
                 android:hint="Number of players"
                 android:fontFamily="@font/montserrat"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info2"
+                android:layout_below="@+id/info1"
                 android:layout_marginTop="35dp"
                 ></EditText>
             <EditText
@@ -97,9 +88,39 @@
                 android:layout_below="@+id/info3"
                 android:layout_marginTop="35dp"
                 ></EditText>
+
+            <CheckBox
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:text="Public Room"
+                android:id="@+id/Public_check"
+                android:layout_below="@+id/info4"
+                android:layout_centerHorizontal="true"
+                >   </CheckBox>
+            <CheckBox
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:text="Private Room"
+                android:id="@+id/Private_check"
+                android:layout_below="@+id/Public_check"
+
+                android:layout_centerHorizontal="true">
+            </CheckBox>
+            <EditText
+                android:id="@+id/info2"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="Subject"
+                android:fontFamily="@font/montserrat"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/Private_check"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                ></EditText>
+
             <Button
                 android:id="@+id/conf"
-                android:layout_below="@id/info4"
+                android:layout_below="@id/info2"
                 android:layout_marginTop="35dp"
                 android:text="Confirm"
                 android:layout_centerHorizontal="true"

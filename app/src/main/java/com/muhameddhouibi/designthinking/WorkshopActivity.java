@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -49,12 +50,15 @@ public class WorkshopActivity extends AppCompatActivity  {
     FirebaseAuth mAuth;
     private FirebaseRecyclerOptions<Room> options;
     private FirebaseRecyclerAdapter<Room,MyGameViewHolder> adapter;
-    DatabaseReference rooms ;
+    DatabaseReference publicrooms ;
+    DatabaseReference privaterooms ;
+
     FirebaseDatabase firebaseDatabase ;
     Button confbtn , annulbtn ;
     EditText info1 , info2 , info3 , info4 ;
     ImageView closeDialog ;
     Dialog Infodiaog ;
+    CheckBox cb1,cb2 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,13 +108,15 @@ public class WorkshopActivity extends AppCompatActivity  {
 
         mAuth = FirebaseAuth.getInstance();
 
-        rooms=FirebaseDatabase.getInstance().getReference("Rooms").child("Public").child("General");
+        publicrooms=FirebaseDatabase.getInstance().getReference("Rooms").child("Public").child("General");
+        privaterooms=FirebaseDatabase.getInstance().getReference("Rooms").child("Private").child("General");
+
 
         recyclerView = findViewById(R.id.listgames);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        options =new FirebaseRecyclerOptions.Builder<Room>().setQuery(rooms,Room.class).build();
+        options =new FirebaseRecyclerOptions.Builder<Room>().setQuery(publicrooms,Room.class).build();
 
         adapter=new FirebaseRecyclerAdapter<Room, MyGameViewHolder>(options) {
             @Override
@@ -172,6 +178,9 @@ public class WorkshopActivity extends AppCompatActivity  {
         info3 = (EditText) Infodiaog.findViewById(R.id.info3);
         info4 = (EditText) Infodiaog.findViewById(R.id.info4);
         closeDialog = (ImageView) Infodiaog.findViewById(R.id.close);
+        cb1 = Infodiaog.findViewById(R.id.Public_check);
+        cb2 = Infodiaog.findViewById(R.id.Private_check);
+
 
 
         closeDialog.setOnClickListener(new View.OnClickListener() {
@@ -205,21 +214,36 @@ public class WorkshopActivity extends AppCompatActivity  {
 //
                 create_game.setText("Creating your room");
                 create_game.setEnabled(false);
-                final String Room_id= rooms.push().getKey();
+                String  privacy = "";
+                final String Room_id= publicrooms.push().getKey();
                 final String Room_name = info1.getText().toString();
                 final String code = info2.getText().toString();
                 final String nb = info3.getText().toString();
                 final String subject = info4.getText().toString();
+                if (cb1.isChecked()){
+                     privacy = "Public";
+                }
+                else if (cb2.isChecked()){
+                    privacy = "Private";
+                }else{
+                    Toast.makeText(WorkshopActivity.this, "Privacy of the Room is required ! ", Toast.LENGTH_SHORT).show();
+                }
 
-
-                if (Room_id.isEmpty() || nb.isEmpty() || code.isEmpty() || subject.isEmpty() ) {
+                if (Room_id.isEmpty() || nb.isEmpty() || code.isEmpty() || subject.isEmpty()) {
 
                     Toast.makeText(WorkshopActivity.this, "All Fields are Required ! ", Toast.LENGTH_SHORT).show();
                }else
                 {
                     final String Payer1_name =mAuth.getCurrentUser().getDisplayName();
                     Room room = new Room(Room_id,Room_name,nb,Payer1_name,code);
-                    rooms.child(Room_name).setValue(room);
+                    if (privacy.equals("Public")){
+                        privaterooms.child(Room_name).setValue(room);
+                        Toast toast=Toast. makeText(getApplicationContext(),"Done !",Toast. LENGTH_SHORT);
+                        toast. show();
+                        Infodiaog.dismiss();
+                    }
+                    else
+                    publicrooms.child(Room_name).setValue(room);
                     Toast toast=Toast. makeText(getApplicationContext(),"Done !",Toast. LENGTH_SHORT);
                     toast. show();
                     Infodiaog.dismiss();
