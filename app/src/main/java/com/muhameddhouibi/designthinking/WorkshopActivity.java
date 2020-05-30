@@ -30,6 +30,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.Entity.Game;
+import com.muhameddhouibi.designthinking.Entity.Room;
 import com.muhameddhouibi.designthinking.Entity.User;
 import com.muhameddhouibi.designthinking.Menu.FriendsActivity;
 import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
@@ -46,8 +47,8 @@ public class WorkshopActivity extends AppCompatActivity  {
     RecyclerView recyclerView ;
     Button create_game ;
     FirebaseAuth mAuth;
-    private FirebaseRecyclerOptions<Game> options;
-    private FirebaseRecyclerAdapter<Game,MyGameViewHolder> adapter;
+    private FirebaseRecyclerOptions<Room> options;
+    private FirebaseRecyclerAdapter<Room,MyGameViewHolder> adapter;
     DatabaseReference rooms ;
     FirebaseDatabase firebaseDatabase ;
     Button confbtn , annulbtn ;
@@ -103,22 +104,22 @@ public class WorkshopActivity extends AppCompatActivity  {
 
         mAuth = FirebaseAuth.getInstance();
 
-        rooms=FirebaseDatabase.getInstance().getReference("rooms");
+        rooms=FirebaseDatabase.getInstance().getReference("Rooms").child("Public").child("General");
 
         recyclerView = findViewById(R.id.listgames);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        options =new FirebaseRecyclerOptions.Builder<Game>().setQuery(rooms,Game.class).build();
+        options =new FirebaseRecyclerOptions.Builder<Room>().setQuery(rooms,Room.class).build();
 
-        adapter=new FirebaseRecyclerAdapter<Game, MyGameViewHolder>(options) {
+        adapter=new FirebaseRecyclerAdapter<Room, MyGameViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyGameViewHolder holder, int position, @NonNull final Game model) {
-               final String roomid = model.getRoom_id();
-               final int nbrplayer = model.getNb_players();
-               final String roomname = model.getRoomName();
+            protected void onBindViewHolder(@NonNull MyGameViewHolder holder, int position, @NonNull Room model) {
+                final String roomid = model.getRoom_id();
+                final String nbrplayer = model.getNb_of_players();
+                final String roomname = model.getRoom_name();
 
-               holder.btn_invite.setOnClickListener(new View.OnClickListener() {
+                holder.btn_invite.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(WorkshopActivity.this,TestGameActivity.class);
@@ -130,8 +131,10 @@ public class WorkshopActivity extends AppCompatActivity  {
 
                     }
                 });
-                holder.GameName.setText(""+model.getRoomName());
+                holder.GameName.setText(""+model.getRoom_name());
             }
+
+
             @NonNull
             @Override
             public MyGameViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -202,18 +205,28 @@ public class WorkshopActivity extends AppCompatActivity  {
 //
                 create_game.setText("Creating your room");
                 create_game.setEnabled(false);
-                final String Game_id= rooms.push().getKey();
-                final String game_name = info1.getText().toString();
+                final String Room_id= rooms.push().getKey();
+                final String Room_name = info1.getText().toString();
+                final String code = info2.getText().toString();
                 final String nb = info3.getText().toString();
-                int finalValue = Integer.parseInt(nb);
+                final String subject = info4.getText().toString();
 
 
-                final String Payer1_name =mAuth.getCurrentUser().getDisplayName();
-                Game game = new Game(game_name,Game_id,Payer1_name,null,null,null,null,finalValue);
-                rooms.child(game_name).setValue(game);
-                Toast toast=Toast. makeText(getApplicationContext(),"Done !",Toast. LENGTH_SHORT);
-                toast. show();
-                Infodiaog.dismiss();
+                if (Room_id.isEmpty() || nb.isEmpty() || code.isEmpty() || subject.isEmpty() ) {
+
+                    Toast.makeText(WorkshopActivity.this, "All Fields are Required ! ", Toast.LENGTH_SHORT).show();
+               }else
+                {
+                    final String Payer1_name =mAuth.getCurrentUser().getDisplayName();
+                    Room room = new Room(Room_id,Room_name,nb,Payer1_name,code);
+                    rooms.child(Room_name).setValue(room);
+                    Toast toast=Toast. makeText(getApplicationContext(),"Done !",Toast. LENGTH_SHORT);
+                    toast. show();
+                    Infodiaog.dismiss();
+                }
+
+
+
 
 
 
