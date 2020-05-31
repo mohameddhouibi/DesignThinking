@@ -11,10 +11,6 @@
     android:layout_gravity="center"
     >
 
-
-
-
-
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -62,9 +58,8 @@
 
 
             <EditText
-                android:id="@+id/info98"
+                android:id="@+id/code_ui"
                 android:layout_width="350dp"
-
                 android:layout_height="wrap_content"
                 android:hint="Privacy Code"
                 android:fontFamily="@font/montserrat"
@@ -76,7 +71,7 @@
 
             <Button
                 android:id="@+id/conf"
-                android:layout_below="@id/info98"
+                android:layout_below="@id/code_ui"
                 android:layout_marginTop="35dp"
                 android:text="Confirm"
                 android:layout_centerHorizontal="true"
@@ -93,6 +88,7 @@
                 android:layout_marginTop="15dp"
                 android:text="Cancel"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cornerbutton1"

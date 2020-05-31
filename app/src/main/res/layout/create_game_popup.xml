@@ -135,6 +135,7 @@
                 android:id="@+id/annul"
                 android:layout_below="@id/conf"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
                 android:text="Cancel"
                 android:layout_centerHorizontal="true"
                 android:layout_width="190dp"

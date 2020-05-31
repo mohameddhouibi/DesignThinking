@@ -58,9 +58,11 @@ public class WorkshopActivity extends AppCompatActivity  {
 
     FirebaseDatabase firebaseDatabase ;
     Button confbtn , annulbtn ;
-    EditText info1 , info2 , info3 , info4 ,code;
-    ImageView closeDialog ;
-    Dialog Infodiaog ;
+    Button confbtn1 , annulbtn2 ;
+
+    EditText info1 , info2 , info3 , info4 ,info87;
+    ImageView closeDialog ,closeDialog1;
+    Dialog Infodiaog,Infodiaog2 ;
     CheckBox cb1,cb2 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class WorkshopActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_workshop);
 
         Infodiaog = new Dialog(this);
+        Infodiaog2 = new Dialog(this);
 
 
         // Bottom Navigation //
@@ -179,69 +182,76 @@ public class WorkshopActivity extends AppCompatActivity  {
                             public void onClick(View v) {
 
                                 //////
-                                Infodiaog.setContentView(R.layout.code_layout);
-                                confbtn=(Button) Infodiaog.findViewById(R.id.conf);
-                                annulbtn=(Button) Infodiaog.findViewById(R.id.annul);
-                                code = (EditText) Infodiaog.findViewById(R.id.info98);
+                                Infodiaog2.setContentView(R.layout.code_layout);
 
-                                closeDialog = (ImageView) Infodiaog.findViewById(R.id.close);
-
-
-                                closeDialog.setOnClickListener(new View.OnClickListener() {
+                                confbtn1=(Button) Infodiaog2.findViewById(R.id.conf);
+                                annulbtn2=(Button) Infodiaog2.findViewById(R.id.annul);
+                                info87 = (EditText)Infodiaog2.findViewById(R.id.code_ui);
+                                closeDialog1 = (ImageView) Infodiaog2.findViewById(R.id.close);
+                                closeDialog1.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        Infodiaog.dismiss();
+                                        Infodiaog2.dismiss();
                                     }
                                 });
-
-                                annulbtn.setOnClickListener(new View.OnClickListener() {
+                                annulbtn2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        Infodiaog.dismiss();
+                                        Infodiaog2.dismiss();
                                     }
                                 });
-
-                                final String cod = code.getText().toString();
-
-                                confbtn.setOnClickListener(new View.OnClickListener() {
-                                    DatabaseReference rrf = FirebaseDatabase.getInstance().getReference("Rooms").child("Private").child("General")
-                                            .child(roomname).child(String.valueOf(code));
+                                confbtn1.setOnClickListener(new View.OnClickListener() {
 
 
                                     @Override
                                     public void onClick(View v) {
-
-                                            rrf.addValueEventListener(new ValueEventListener() {
-                                                @Override
-                                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                                    final String value2 = dataSnapshot.getValue(String.class);
-                                                    if (value2 == cod)
-                                                    {
-                                                        Intent i = new Intent(WorkshopActivity.this,TestGameActivity.class);
-                                                        i.putExtra("roomid",""+roomid);
-                                                        i.putExtra("roomname",""+roomname);
-                                                        i.putExtra("nbr",""+nbrplayer);
-                                                        startActivity(i);
-                                                        overridePendingTransition(0,0);
-
-                                                    }
-                                                    else
-                                                    {
-                                                        Toast.makeText(WorkshopActivity.this, "Invalid Code ! ", Toast.LENGTH_SHORT).show();
-                                                    }
-                                                }
-
-                                                @Override
-                                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                        DatabaseReference rrf = FirebaseDatabase.getInstance().getReference("Rooms").child("Private").child("General")
+                                                .child(roomname).child("code");
+                                        final String aaa = info87.getText().toString();
+                                                if(aaa.equals(""))
+                                                {
+                                                    Toast.makeText(WorkshopActivity.this, "Code Required ", Toast.LENGTH_SHORT).show();
 
                                                 }
-                                            });
+                                                else
+                                                    {
+                                                        rrf.addValueEventListener(new ValueEventListener() {
+                                                            @Override
+                                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                                                final String value2 = dataSnapshot.getValue(String.class);
+
+                                                                if (value2.equals(aaa))
+                                                                {
+                                                                    Intent i = new Intent(WorkshopActivity.this,TestGameActivity.class);
+                                                                    i.putExtra("roomid",""+roomid);
+                                                                    i.putExtra("roomname",""+roomname);
+                                                                    i.putExtra("nbr",""+nbrplayer);
+                                                                    startActivity(i);
+                                                                    overridePendingTransition(0,0);
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    //     Toast.makeText(WorkshopActivity.this, value2, Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(WorkshopActivity.this, aaa, Toast.LENGTH_SHORT).show();
+
+                                                                }
+                                                            }
+
+                                                            @Override
+                                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                            }
+                                                        });
+                                                }
+
+
 
 
                                     }
                                 });
-                                Infodiaog.show();
+                                Infodiaog2.show();
                                 //////
 
 
@@ -368,41 +378,5 @@ public class WorkshopActivity extends AppCompatActivity  {
         Infodiaog.show();
     }
 
-    private void Information2AlertBuilder ()
-    {
-        Infodiaog.setContentView(R.layout.code_layout);
-        confbtn=(Button) Infodiaog.findViewById(R.id.conf);
-        annulbtn=(Button) Infodiaog.findViewById(R.id.annul);
-        code = (EditText) Infodiaog.findViewById(R.id.info98);
 
-        closeDialog = (ImageView) Infodiaog.findViewById(R.id.close);
-
-
-        closeDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Infodiaog.dismiss();
-            }
-        });
-
-        annulbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Infodiaog.dismiss();
-            }
-        });
-
-
-        confbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                final String cod = code.getText().toString();
-
-
-            }
-        });
-        Infodiaog.show();
-    }
 }

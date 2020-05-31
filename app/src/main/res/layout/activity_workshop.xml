@@ -9,7 +9,7 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_above="@+id/bottom_nav"
+    android:layout_above="@+id/aaa2"
     android:background="@color/colorWhite"
    >
 <RelativeLayout
@@ -111,13 +111,20 @@
 
     </RelativeLayout>
 
+
+
+
+</RelativeLayout>
+
+</ScrollView>
     <RelativeLayout
+        android:layout_above="@+id/bottom_nav"
         android:id="@+id/aaa2"
-        android:layout_below="@id/aaa"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_width="match_parent"
+        android:layout_marginBottom="5dp"
         android:layout_height="wrap_content"
         >
 
@@ -134,12 +141,6 @@
 
 
     </RelativeLayout>
-
-
-</RelativeLayout>
-
-</ScrollView>
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
