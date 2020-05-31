@@ -135,6 +135,7 @@ public class WorkshopActivity extends AppCompatActivity  {
                                 i.putExtra("roomid",""+roomid);
                                 i.putExtra("roomname",""+roomname);
                                 i.putExtra("nbr",""+nbrplayer);
+                                i.putExtra("privacy","Public");
                                 startActivity(i);
                                 overridePendingTransition(0,0);
 
@@ -227,6 +228,8 @@ public class WorkshopActivity extends AppCompatActivity  {
                                                                     i.putExtra("roomid",""+roomid);
                                                                     i.putExtra("roomname",""+roomname);
                                                                     i.putExtra("nbr",""+nbrplayer);
+                                                                    i.putExtra("privacy","Private");
+
                                                                     startActivity(i);
                                                                     overridePendingTransition(0,0);
 
@@ -234,7 +237,7 @@ public class WorkshopActivity extends AppCompatActivity  {
                                                                 else
                                                                 {
                                                                     //     Toast.makeText(WorkshopActivity.this, value2, Toast.LENGTH_SHORT).show();
-                                                                    Toast.makeText(WorkshopActivity.this, aaa, Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(WorkshopActivity.this, "Invalid Privacy Code !", Toast.LENGTH_SHORT).show();
 
                                                                 }
                                                             }

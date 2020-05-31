@@ -102,7 +102,8 @@ public class NotificationsActivity extends AppCompatActivity {
                     holder.decline.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                                DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
+
+                                DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitations").child(playerName).child(inv_id);
                                 GestInvi.removeValue();
 
                         }
@@ -138,7 +139,8 @@ public class NotificationsActivity extends AppCompatActivity {
                                         DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
                                         GestInvi.removeValue();
                                     }else
-                                    {   playerreff3.addValueEventListener(new ValueEventListener() {
+                                    {
+                                        playerreff3.addValueEventListener(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
                                             final String value3 = dataSnapshot.getValue(String.class);

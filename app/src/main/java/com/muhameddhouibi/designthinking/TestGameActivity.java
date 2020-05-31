@@ -90,6 +90,7 @@ public class TestGameActivity extends AppCompatActivity {
 
 
         final String roomid = getIntent().getStringExtra("roomname");
+        final String privacy =getIntent().getStringExtra("privacy");
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         Users=FirebaseDatabase.getInstance().getReference("Users");
@@ -106,17 +107,17 @@ public class TestGameActivity extends AppCompatActivity {
                 holder.btn_invite.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int i ;
+                        int i = 0;
                         final String reciever =model.getUserName();
                         final String sender =mAuth.getCurrentUser().getDisplayName();
-                        invitationReff=FirebaseDatabase.getInstance().getReference("Invitation:"+reciever);
+                        invitationReff=FirebaseDatabase.getInstance().getReference("Invitations").child(reciever);
                         holder.btn_invite.setText("Invited");
                         holder.btn_invite.setEnabled(false);
                         final String invitation_id= invitationReff.push().getKey();
                         Invitation invitation = new Invitation(invitation_id,roomid,sender,reciever);
                         invitationReff.child(invitation_id).setValue(invitation);
 
-                    }
+                                            }
                 });
                 holder.userName.setText(""+model.getUserName());
 
