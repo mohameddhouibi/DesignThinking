@@ -6,17 +6,27 @@ public class Invitation {
     String Invitation_id;
     String Game_id ;
     String Sender_uid ;
-    String desitination_uid ;
+    String Desitination_uid ;
+    String Privacy ;
 
     public Invitation() {
     }
 
 
-    public Invitation(String invitation_id, String game_id, String sender_uid, String desitination_uid) {
+    public Invitation(String invitation_id, String game_id, String sender_uid, String desitination_uid,String privacy ) {
         Invitation_id = invitation_id;
         Game_id = game_id;
         Sender_uid = sender_uid;
-      this.desitination_uid = desitination_uid;
+        Desitination_uid = desitination_uid;
+        Privacy = privacy ;
+    }
+
+    public String getPrivacy() {
+        return Privacy;
+    }
+
+    public void setPrivacy(String privacy) {
+        Privacy = privacy;
     }
 
     public String getInvitation_id() {
@@ -44,10 +54,10 @@ public class Invitation {
     }
 
     public String getDesitination_uid() {
-        return desitination_uid;
+        return Desitination_uid;
     }
 
     public void setDesitination_uid(String desitination_uid) {
-        this.desitination_uid = desitination_uid;
+        Desitination_uid = desitination_uid;
     }
 }

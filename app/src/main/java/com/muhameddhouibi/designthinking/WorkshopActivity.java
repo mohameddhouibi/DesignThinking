@@ -52,7 +52,7 @@ public class WorkshopActivity extends AppCompatActivity  {
     private FirebaseRecyclerOptions<Room> options1;
     private FirebaseRecyclerAdapter<Room,MyGameViewHolder> adapter;
     DatabaseReference publicrooms ;
-    DatabaseReference privaterooms ;
+    DatabaseReference privaterooms,playerreff2 ;
      DatabaseReference codeRef ;
 
 
@@ -127,7 +127,7 @@ public class WorkshopActivity extends AppCompatActivity  {
                         final String roomid = model.getRoom_id();
                         final String nbrplayer = model.getNb_of_players();
                         final String roomname = model.getRoom_name();
-
+                        final String creator = model.getCreator();
                         holder.btn_invite.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -138,6 +138,10 @@ public class WorkshopActivity extends AppCompatActivity  {
                                 i.putExtra("privacy","Public");
                                 startActivity(i);
                                 overridePendingTransition(0,0);
+                                playerreff2 = FirebaseDatabase.getInstance().getReference("Rooms").child("Public").child("InRoom").child(roomname)
+                                        .child("Join1");
+                                playerreff2.setValue(creator);
+
 
                             }
                         });

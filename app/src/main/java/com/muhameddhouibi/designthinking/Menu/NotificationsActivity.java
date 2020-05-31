@@ -89,7 +89,7 @@ public class NotificationsActivity extends AppCompatActivity {
         });
         //end Bottom Navigation //
         playerName=mAuth.getCurrentUser().getDisplayName();
-        invitations=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName );
+        invitations=FirebaseDatabase.getInstance().getReference("Invitations").child(playerName);
         recyclerView = findViewById(R.id.recyclerinvitations);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         options =new FirebaseRecyclerOptions.Builder<Invitation>().setQuery(invitations,Invitation.class).build();
@@ -113,12 +113,16 @@ public class NotificationsActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             int i ;
                             final String roomname = model.getGame_id();
+                            final String RoomPrivacy = model.getPrivacy();
 
-                            playerreff2 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+2);
-                            playerreff3 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+3);
-                            playerreff4 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+4);
-                            playerreff5 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+5);
-                            gamereff =FirebaseDatabase.getInstance().getReference("rooms/" + roomname);
+                            playerreff2 = FirebaseDatabase.getInstance().getReference("Rooms").child(RoomPrivacy).child("InRoom").child(roomname)
+                                    .child("Join2");
+                            playerreff3 =FirebaseDatabase.getInstance().getReference("Rooms").child(RoomPrivacy).child("InRoom").child(roomname)
+                                    .child("Join3");
+                            playerreff4 =FirebaseDatabase.getInstance().getReference("Rooms").child(RoomPrivacy).child("InRoom").child(roomname)
+                                    .child("Join4");
+                            playerreff5 =FirebaseDatabase.getInstance().getReference("Rooms").child(RoomPrivacy).child("InRoom").child(roomname)
+                                    .child("Join5");
 
 
                             playerreff2.addValueEventListener(new ValueEventListener() {
@@ -136,7 +140,7 @@ public class NotificationsActivity extends AppCompatActivity {
                                         startActivity(i);
                                         overridePendingTransition(0,0);
 
-                                        DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
+                                        DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitations").child(playerName).child(inv_id);
                                         GestInvi.removeValue();
                                     }else
                                     {
@@ -153,7 +157,7 @@ public class NotificationsActivity extends AppCompatActivity {
                                                 startActivity(i);
                                                 overridePendingTransition(0,0);
 
-                                                DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
+                                                DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitations").child(playerName).child(inv_id);
                                                 GestInvi.removeValue();
                                             } else if(value3 !=model.getDesitination_uid() || value2 == value3)
                                             {
@@ -172,7 +176,7 @@ public class NotificationsActivity extends AppCompatActivity {
                                                             startActivity(i);
                                                             overridePendingTransition(0,0);
 
-                                                            DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
+                                                            DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitations").child(playerName).child(inv_id);
                                                             GestInvi.removeValue();
                                                         }else if (value4 !=model.getDesitination_uid() && model.getDesitination_uid() !=value2 && model.getDesitination_uid() !=value3)
                                                         {
@@ -183,7 +187,7 @@ public class NotificationsActivity extends AppCompatActivity {
                                                             startActivity(i);
                                                             overridePendingTransition(0,0);
 
-                                                            DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitation:" + playerName).child(inv_id);
+                                                            DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitations").child(playerName).child(inv_id);
                                                             GestInvi.removeValue();
                                                         }
 

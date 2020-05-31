@@ -114,7 +114,7 @@ public class TestGameActivity extends AppCompatActivity {
                         holder.btn_invite.setText("Invited");
                         holder.btn_invite.setEnabled(false);
                         final String invitation_id= invitationReff.push().getKey();
-                        Invitation invitation = new Invitation(invitation_id,roomid,sender,reciever);
+                        Invitation invitation = new Invitation(invitation_id,roomid,sender,reciever,privacy);
                         invitationReff.child(invitation_id).setValue(invitation);
 
                                             }
