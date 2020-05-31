@@ -44,8 +44,8 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create a new room"
-                android:textSize="25dp"
+                android:text="You need a privacy code to join this room"
+                android:textSize="17dp"
                 android:fontFamily="@font/montserrat"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"></TextView>
@@ -58,69 +58,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="65dp"
             android:background="@color/colorWhite">
-            <EditText
-                android:id="@+id/info1"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Room Name"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="35dp"
-                ></EditText>
+
+
 
             <EditText
-                android:id="@+id/info3"
+                android:id="@+id/info98"
                 android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Number of players"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info1"
-                android:layout_marginTop="35dp"
-                ></EditText>
-            <EditText
-                android:id="@+id/info4"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Subject"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info3"
-                android:layout_marginTop="35dp"
-                ></EditText>
 
-            <CheckBox
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:text="Public Room"
-                android:id="@+id/Public_check"
-                android:layout_below="@+id/info4"
-                android:layout_centerHorizontal="true"
-                >   </CheckBox>
-            <CheckBox
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:text="Private Room"
-                android:id="@+id/Private_check"
-                android:layout_below="@+id/Public_check"
-
-                android:layout_centerHorizontal="true">
-            </CheckBox>
-            <EditText
-                android:id="@+id/info2"
-                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:hint="Privacy Code"
                 android:fontFamily="@font/montserrat"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/Private_check"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:visibility="visible"
                 ></EditText>
 
             <Button
                 android:id="@+id/conf"
-                android:layout_below="@id/info2"
+                android:layout_below="@id/info98"
                 android:layout_marginTop="35dp"
                 android:text="Confirm"
                 android:layout_centerHorizontal="true"

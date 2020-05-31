@@ -59,9 +59,38 @@
             android:layout_toRightOf="@+id/bar"></TextView>
 
     </RelativeLayout>
+
+
+  <RelativeLayout
+      android:id="@+id/Relaa6"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:layout_below="@+id/Relative1">
+      <Button
+          android:id="@+id/private_Rooms"
+          android:layout_width="185dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:textColor="#FFFFFF"
+          android:background="@drawable/cornerbutton1"
+          android:text="Private rooms"></Button>
+      <Button
+          android:id="@+id/public_Rooms"
+          android:layout_width="185dp"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:layout_height="wrap_content"
+          android:textColor="#050C32"
+          android:layout_toRightOf="@+id/private_Rooms"
+          android:background="@drawable/cornerbutton2"
+          android:text="Public rooms"></Button>
+
+  </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/aaa"
-        android:layout_below="@id/Relative1"
+        android:layout_below="@id/Relaa6"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
