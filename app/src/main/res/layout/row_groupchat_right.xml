@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Name"
         android:fontFamily="@font/montserrat"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#CCC8BF"
         android:textStyle="bold"
         android:layout_marginStart="5dp"></TextView>
     <TextView
@@ -27,7 +27,7 @@
         android:text="the Message"
         android:layout_below="@+id/NameTv"
         android:fontFamily="@font/montserrat"
-        android:textColor="@color/black_color"></TextView>
+        android:textColor="@color/colorWhite"></TextView>
 
 
 

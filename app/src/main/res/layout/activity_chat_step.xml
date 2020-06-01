@@ -17,7 +17,7 @@
 
         <ImageView
             android:id="@+id/bar"
-            android:layout_width="32dp"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
             android:src="@drawable/im1"></ImageView>
 
@@ -48,7 +48,44 @@
             android:textSize="15dp"
             android:textStyle="normal"></TextView>
 
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    >
+    <Button
+        android:id="@+id/set"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Final Decision"
+        android:fontFamily="@font/montserrat"
+        android:textAlignment="center"
+        android:textStyle="normal"
+        android:textAllCaps="true"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/tutor"
+        android:background="@drawable/cornerbutton2"
+        >
 
+    </Button>
+
+    <Button
+        android:id="@+id/tutor"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/cornerbutton2"
+        android:fontFamily="@font/montserrat"
+        android:text="Call Tutor"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textStyle="normal">
+
+    </Button>
+
+
+</RelativeLayout>
 
     </RelativeLayout>
 

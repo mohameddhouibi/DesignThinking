@@ -4,11 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,6 +37,10 @@ public class ChatStepActivity extends AppCompatActivity {
     private RecyclerView ChatRv ;
     private ArrayList<ChatGroup> chatGroupList =new ArrayList<>();
     private ArrayList<ChatGroup> chatGroupListtest =new ArrayList<>();
+    private Button tutor , finalDecision ,confbtn1 ,annulbtn2;
+    EditText info87 ;
+    Dialog Infodiaog,Infodiaog2 ;
+    ImageView closeDialog1;
 
     private AdapterGroupChat adapterGroupChat ;
 
@@ -55,9 +63,63 @@ public class ChatStepActivity extends AppCompatActivity {
         send=findViewById(R.id.send_btn);
         messageEt=findViewById(R.id.messageEt);
         ChatRv=findViewById(R.id.ChatRv);
+
         loadGroupeMessages();
 
+        Infodiaog = new Dialog(this);
+        Infodiaog2 = new Dialog(this);
 
+        tutor = findViewById(R.id.tutor);
+        finalDecision = findViewById(R.id.set);
+        tutor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //////
+
+                //////
+            }
+        });
+        finalDecision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Infodiaog2.setContentView(R.layout.final_decisionn);
+
+                confbtn1=(Button) Infodiaog2.findViewById(R.id.conf);
+                annulbtn2=(Button) Infodiaog2.findViewById(R.id.annul);
+                info87 = (EditText)Infodiaog2.findViewById(R.id.code_ui);
+                closeDialog1 = (ImageView) Infodiaog2.findViewById(R.id.close);
+                closeDialog1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Infodiaog2.dismiss();
+                    }
+                });
+                annulbtn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Infodiaog2.dismiss();
+                    }
+                });
+                confbtn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Discussion")
+                                .child("Step1").child("FinalDecision");
+
+                        final String aaa = info87.getText().toString();
+                        if(aaa.equals(""))
+                        {
+                            Toast.makeText(ChatStepActivity.this, "Code Required ", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            rrf.setValue(aaa);
+                        }
+                    }
+                });
+                Infodiaog2.show();
+            }
+        });
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
