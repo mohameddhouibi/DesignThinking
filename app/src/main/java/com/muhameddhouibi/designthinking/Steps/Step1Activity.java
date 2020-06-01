@@ -126,7 +126,7 @@ public class Step1Activity extends AppCompatActivity {
 
 
         Toast toast = Toast. makeText(this,roomname , Toast.LENGTH_SHORT); toast. show();
-        Discussions=FirebaseDatabase.getInstance().getReference("Discussions");
+        Discussions=FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("Discussion");
         mAuth = FirebaseAuth.getInstance();
         final String Discussion_id= Discussions.push().getKey();
         result.setOnClickListener(new View.OnClickListener() {
@@ -135,24 +135,20 @@ public class Step1Activity extends AppCompatActivity {
                 InformationAlertBuilder ();
             }
         });
-
-
-        discussion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HashMap<String,String> hashMap = new HashMap<>();
-                hashMap.put("discussionId",Discussion_id);
-                hashMap.put("StepNum","1");
-                hashMap.put("RoomName",roomname);
-                Discussions.child(roomname+"Step1").setValue(hashMap)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+        HashMap<String,String> hashMap = new HashMap<>();
+        hashMap.put("discussionId",Discussion_id);
+        hashMap.put("StepNum","1");
+        hashMap.put("RoomName",roomname);
+        Discussions.child("Step1").setValue(hashMap)
+                .addOnSuccessListener(
+                        new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                playerreff1 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+1);
-                                playerreff2 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+2);
-                                playerreff3 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+3);
-                                playerreff4 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+4);
-                                playerreff5 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+5);
+                                playerreff1 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player1");
+                                playerreff2 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player2");
+                                playerreff3 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player3");
+                                playerreff4 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player4");
+                                playerreff5 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player5");
                                 playerreff1.addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -267,15 +263,20 @@ public class Step1Activity extends AppCompatActivity {
                                 hashMap1.put("Player3",a3);
                                 hashMap1.put("Player4",a4);
                                 hashMap1.put("Player5",a5);
-                                Discussions.child(roomname+"Step1").child("Participants").setValue(hashMap1);
-                                Intent i = new Intent(Step1Activity.this, ChatStepActivity.class);
-                                i.putExtra("discussion",roomname+"Step1");
-                                startActivity(i);
-                                overridePendingTransition(0,0);
+                                Discussions.child("Step1").child("Participants").setValue(hashMap1);
+
 
 
                             }
                         });
+
+        discussion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Step1Activity.this, ChatStepActivity.class);
+                i.putExtra("discussion",roomname);
+                startActivity(i);
+                overridePendingTransition(0,0);
             }
         });
 

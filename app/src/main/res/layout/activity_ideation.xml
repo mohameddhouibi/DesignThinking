@@ -81,7 +81,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="5dp"
                     android:layout_marginLeft="5dp"
-                    android:src="@drawable/nspiration"></ImageView>
+                    android:src="@drawable/kindpng_751955"></ImageView>
             </RelativeLayout>
 
 
@@ -271,8 +271,8 @@
 
     <Button
         android:id="@+id/startt"
-        android:layout_width="380dp"
-        android:layout_height="60dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"

@@ -45,7 +45,7 @@ public class TestGameActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     FirebaseDatabase firebaseDatabase ;
     DatabaseReference Users ;
-    DatabaseReference invitationReff ;
+    DatabaseReference invitationReff ,invitationReff2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +91,7 @@ public class TestGameActivity extends AppCompatActivity {
 
         final String roomid = getIntent().getStringExtra("roomname");
         final String privacy =getIntent().getStringExtra("privacy");
-
+        Toast.makeText(this, roomid, Toast.LENGTH_SHORT).show();
         firebaseDatabase = FirebaseDatabase.getInstance();
         Users=FirebaseDatabase.getInstance().getReference("Users");
         mAuth = FirebaseAuth.getInstance();
@@ -107,16 +107,16 @@ public class TestGameActivity extends AppCompatActivity {
                 holder.btn_invite.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int i = 0;
                         final String reciever =model.getUserName();
                         final String sender =mAuth.getCurrentUser().getDisplayName();
                         invitationReff=FirebaseDatabase.getInstance().getReference("Invitations").child(reciever);
+                        invitationReff2=FirebaseDatabase.getInstance().getReference("Invitations").child(roomid).child(reciever);
                         holder.btn_invite.setText("Invited");
                         holder.btn_invite.setEnabled(false);
                         final String invitation_id= invitationReff.push().getKey();
                         Invitation invitation = new Invitation(invitation_id,roomid,sender,reciever,privacy);
                         invitationReff.child(invitation_id).setValue(invitation);
-
+                        invitationReff2.child(invitation_id).setValue(invitation);
                                             }
                 });
                 holder.userName.setText(""+model.getUserName());
@@ -140,6 +140,7 @@ public class TestGameActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(TestGameActivity.this, RooActivity.class);
                 i.putExtra("room",roomid);
+                i.putExtra("privacy",privacy);
                 startActivity(i);
                 overridePendingTransition(0,0);
 

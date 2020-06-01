@@ -99,6 +99,7 @@ public class NotificationsActivity extends AppCompatActivity {
 
                     holder.descri.setText("eeee");
                     final String inv_id = model.getInvitation_id();
+                    final String privacy = model.getPrivacy();
                     holder.decline.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -137,9 +138,10 @@ public class NotificationsActivity extends AppCompatActivity {
                                         holder.btn_invite.setEnabled(false);
                                         Intent i = new Intent(NotificationsActivity.this, RooActivity.class);
                                         i.putExtra("roo",roomname);
+                                        i.putExtra("privacy",privacy);
+                                        i.putExtra("thisPlayer",model.getDesitination_uid());
                                         startActivity(i);
                                         overridePendingTransition(0,0);
-
                                         DatabaseReference GestInvi=FirebaseDatabase.getInstance().getReference("Invitations").child(playerName).child(inv_id);
                                         GestInvi.removeValue();
                                     }else
@@ -154,6 +156,8 @@ public class NotificationsActivity extends AppCompatActivity {
                                                 holder.btn_invite.setEnabled(false);
                                                 Intent i = new Intent(NotificationsActivity.this, RooActivity.class);
                                                 i.putExtra("roo",roomname);
+                                                i.putExtra("privacy",privacy);
+                                                i.putExtra("thisPlayer",model.getDesitination_uid());
                                                 startActivity(i);
                                                 overridePendingTransition(0,0);
 
@@ -173,6 +177,8 @@ public class NotificationsActivity extends AppCompatActivity {
                                                             holder.btn_invite.setEnabled(false);
                                                             Intent i = new Intent(NotificationsActivity.this, RooActivity.class);
                                                             i.putExtra("roo",roomname);
+                                                            i.putExtra("privacy",privacy);
+                                                            i.putExtra("thisPlayer",model.getDesitination_uid());
                                                             startActivity(i);
                                                             overridePendingTransition(0,0);
 
@@ -184,6 +190,8 @@ public class NotificationsActivity extends AppCompatActivity {
                                                             holder.btn_invite.setEnabled(false);
                                                             Intent i = new Intent(NotificationsActivity.this, RooActivity.class);
                                                             i.putExtra("roo",roomname);
+                                                            i.putExtra("privacy",privacy);
+                                                            i.putExtra("thisPlayer",model.getDesitination_uid());
                                                             startActivity(i);
                                                             overridePendingTransition(0,0);
 

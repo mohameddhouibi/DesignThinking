@@ -113,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/bt_blanc">
+            android:background="@drawable/bt_blancc">
 
         <ImageView
             android:id="@+id/end"

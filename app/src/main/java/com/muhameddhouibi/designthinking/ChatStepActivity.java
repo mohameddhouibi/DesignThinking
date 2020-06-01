@@ -35,6 +35,15 @@ public class ChatStepActivity extends AppCompatActivity {
     private ArrayList<ChatGroup> chatGroupListtest =new ArrayList<>();
 
     private AdapterGroupChat adapterGroupChat ;
+
+    DatabaseReference Discussions ;
+    DatabaseReference playerreff1 ;
+    DatabaseReference playerreff2 ;
+    DatabaseReference playerreff3 ;
+    DatabaseReference playerreff4 ;
+    DatabaseReference playerreff5 ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,8 +79,8 @@ public class ChatStepActivity extends AppCompatActivity {
     private void loadGroupeMessages() {
 
         chatGroupList = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Discussions");
-        ref.child(discussion).child("Messages")
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Discussion").child("Step1");
+        ref.child("Messages")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -100,9 +109,8 @@ public class ChatStepActivity extends AppCompatActivity {
         hashMap.put("message",message);
         hashMap.put("timestamp",timestamp);
         hashMap.put("typee","text");
-
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Discussions");
-        ref.child(discussion).child("Messages").child(timestamp).setValue(hashMap)
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Discussion").child("Step1");
+        ref.child("Messages").child(timestamp).setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
