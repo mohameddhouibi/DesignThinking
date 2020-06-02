@@ -103,8 +103,9 @@ public class ChatStepActivity extends AppCompatActivity {
                 confbtn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Discussion")
-                                .child("Step1").child("FinalDecision");
+                        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step1")
+                                .child("FinalDecision");;
+
 
                         final String aaa = info87.getText().toString();
                         if(aaa.equals(""))

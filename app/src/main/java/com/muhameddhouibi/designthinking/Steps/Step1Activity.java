@@ -126,7 +126,7 @@ public class Step1Activity extends AppCompatActivity {
 
 
         Toast toast = Toast. makeText(this,roomname , Toast.LENGTH_SHORT); toast. show();
-        Discussions=FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("Discussion");
+        Discussions=FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("Step1").child("Discussion");
         mAuth = FirebaseAuth.getInstance();
         final String Discussion_id= Discussions.push().getKey();
         result.setOnClickListener(new View.OnClickListener() {
@@ -298,8 +298,8 @@ public class Step1Activity extends AppCompatActivity {
             }
         });
 
-        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("Discussion")
-                .child("Step1").child("FinalDecision");
+        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("Step1")
+                .child("FinalDecision");
         rrf.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
