@@ -94,7 +94,7 @@ public class Chat4Activity extends AppCompatActivity {
                 confbtn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step1")
+                        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step4")
                                 .child("FinalDecision");;
 
 
@@ -135,8 +135,8 @@ public class Chat4Activity extends AppCompatActivity {
     private void loadGroupeMessages() {
 
         chatGroupList = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Discussions");
-        ref.child(discussion).child("Messages")
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step4").child("Discussion");
+        ref.child("Messages")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -167,8 +167,8 @@ public class Chat4Activity extends AppCompatActivity {
         hashMap.put("timestamp",timestamp);
         hashMap.put("typee","text");
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Discussions");
-        ref.child(discussion).child("Messages").child(timestamp).setValue(hashMap)
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step4").child("Discussion");
+        ref.child("Messages").child(timestamp).setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
