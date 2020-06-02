@@ -4,11 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,7 +39,10 @@ public class Chat2Activity extends AppCompatActivity {
     private ArrayList<ChatGroup> chatGroupList =new ArrayList<>();
     private ArrayList<ChatGroup> chatGroupListtest =new ArrayList<>();
     private AdapterGroupChat adapterGroupChat ;
-
+    private Button tutor , finalDecision ,confbtn1 ,annulbtn2;
+    EditText info87 ;
+    Dialog Infodiaog,Infodiaog2 ;
+    ImageView closeDialog1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +57,63 @@ public class Chat2Activity extends AppCompatActivity {
         ChatRv=findViewById(R.id.ChatRv);
         loadGroupeMessages();
 
+        Infodiaog = new Dialog(this);
+        Infodiaog2 = new Dialog(this);
 
+        tutor = findViewById(R.id.tutor);
+        finalDecision = findViewById(R.id.set);
+        tutor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //////
+                Toast.makeText(Chat2Activity.this, "Tutor is in his way to join the discussion wait for him! ", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        finalDecision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Infodiaog2.setContentView(R.layout.final_decisionn);
+
+                confbtn1=(Button) Infodiaog2.findViewById(R.id.conf);
+                annulbtn2=(Button) Infodiaog2.findViewById(R.id.annul);
+                info87 = (EditText)Infodiaog2.findViewById(R.id.code_ui);
+                closeDialog1 = (ImageView) Infodiaog2.findViewById(R.id.close);
+                closeDialog1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Infodiaog2.dismiss();
+                    }
+                });
+                annulbtn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Infodiaog2.dismiss();
+                    }
+                });
+                confbtn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step2")
+                                .child("FinalDecision");;
+
+
+                        final String aaa = info87.getText().toString();
+                        if(aaa.equals(""))
+                        {
+                            Toast.makeText(Chat2Activity.this, "can't add an Empty value ! ", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            rrf.setValue(aaa);
+                            Toast.makeText(Chat2Activity.this, "Final decission added successfully :) ", Toast.LENGTH_SHORT).show();
+                            Infodiaog2.dismiss();
+                        }
+                    }
+                });
+                Infodiaog2.show();
+            }
+        });
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,8 +135,8 @@ public class Chat2Activity extends AppCompatActivity {
     private void loadGroupeMessages() {
 
         chatGroupList = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Discussions");
-        ref.child(discussion).child("Messages")
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step2").child("Discussion");
+        ref.child("Messages")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -105,8 +167,8 @@ public class Chat2Activity extends AppCompatActivity {
         hashMap.put("timestamp",timestamp);
         hashMap.put("typee","text");
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Discussions");
-        ref.child(discussion).child("Messages").child(timestamp).setValue(hashMap)
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step2").child("Discussion");
+        ref.child("Messages").child(timestamp).setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
