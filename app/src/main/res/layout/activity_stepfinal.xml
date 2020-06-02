@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Steps.StepfinalActivity">
+
+    <RelativeLayout
+        android:id="@+id/Relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp">
+
+        <ImageView
+            android:id="@+id/bar"
+            android:layout_width="32dp"
+            android:layout_height="100dp"
+            android:src="@drawable/im1"></ImageView>
+
+        <TextView
+            android:id="@+id/tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/bar"
+            android:fontFamily="@font/montserrat"
+            android:text="Finishing and sharing"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/txx"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tx"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="1dp"
+            android:layout_toRightOf="@+id/bar"
+            android:fontFamily="@font/montserrat"
+            android:text="Here you have the choice to share your generated idea to the global community and Give feedback about your Teammates effort"
+            android:textSize="15dp"
+            android:textStyle="normal"></TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Relaa6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/Relative1">
+        <Button
+            android:id="@+id/private_Rooms"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/cornerbutton1"
+            android:text="Share your Idea"
+            android:fontFamily="@font/montserrat"
+            android:textAllCaps="false"
+            android:textStyle="normal"
+            ></Button>
+        <Button
+            android:id="@+id/public_Rooms"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/private_Rooms"
+            android:background="@drawable/cornerbutton2"
+            android:text="Rate your Teammates"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat"
+            android:textAllCaps="false"
+            android:textColor="#003366"
+            android:textStyle="normal"
+
+            ></Button>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Relaa6"
+        android:src="@drawable/ste1">
+
+    </ImageView>
+
+
+</RelativeLayout>
