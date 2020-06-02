@@ -298,6 +298,30 @@ public class Step1Activity extends AppCompatActivity {
             }
         });
 
+        DatabaseReference rrf =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("Discussion")
+                .child("Step1").child("FinalDecision");
+        rrf.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        final String value2 = dataSnapshot.getValue(String.class);
+                        if (value2 == null)
+                        {
+                            tx.setText("You didnt set the final decision yet !");
+                        }
+                        else
+                        {
+                            tx.setText(value2);
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
         subBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

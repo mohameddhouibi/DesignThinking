@@ -75,8 +75,8 @@ public class ChatStepActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //////
+                Toast.makeText(ChatStepActivity.this, "Tutor is in his way to join the discussion wait for him! ", Toast.LENGTH_LONG).show();
 
-                //////
             }
         });
         finalDecision.setOnClickListener(new View.OnClickListener() {
@@ -109,11 +109,13 @@ public class ChatStepActivity extends AppCompatActivity {
                         final String aaa = info87.getText().toString();
                         if(aaa.equals(""))
                         {
-                            Toast.makeText(ChatStepActivity.this, "Code Required ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ChatStepActivity.this, "can't add an Empty value ! ", Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
                             rrf.setValue(aaa);
+                            Toast.makeText(ChatStepActivity.this, "Final decission added successfully :) ", Toast.LENGTH_SHORT).show();
+                            Infodiaog2.dismiss();
                         }
                     }
                 });
@@ -141,7 +143,7 @@ public class ChatStepActivity extends AppCompatActivity {
     private void loadGroupeMessages() {
 
         chatGroupList = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Discussion").child("Step1");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step1").child("Discussion");
         ref.child("Messages")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -171,7 +173,7 @@ public class ChatStepActivity extends AppCompatActivity {
         hashMap.put("message",message);
         hashMap.put("timestamp",timestamp);
         hashMap.put("typee","text");
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Discussion").child("Step1");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Workshops").child(discussion).child("Step1").child("Discussion");
         ref.child("Messages").child(timestamp).setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
