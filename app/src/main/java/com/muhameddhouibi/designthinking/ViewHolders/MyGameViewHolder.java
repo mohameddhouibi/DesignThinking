@@ -11,9 +11,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.muhameddhouibi.designthinking.R;
 
 public class MyGameViewHolder extends RecyclerView.ViewHolder {
-    TextView GameName;
-    Button btn_invite;
-    View view ;
+    public TextView GameName;
+    public Button btn_invite;
+    public View view ;
 
     public MyGameViewHolder(@NonNull View itemView) {
 

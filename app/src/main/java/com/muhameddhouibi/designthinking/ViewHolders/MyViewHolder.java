@@ -12,8 +12,8 @@ import com.muhameddhouibi.designthinking.R;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
 
-    TextView userName;
-    Button btn_invite;
+    public  TextView userName;
+    public Button btn_invite;
 
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);

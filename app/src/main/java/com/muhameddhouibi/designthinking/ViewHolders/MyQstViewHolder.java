@@ -12,9 +12,9 @@ import com.muhameddhouibi.designthinking.R;
 public class MyQstViewHolder extends RecyclerView.ViewHolder {
 
 
-    TextView qst_txte,qst_nbre;
-    Button btn_yes , btn_no;
-    View view ;
+    public TextView qst_txte,qst_nbre;
+    public Button btn_yes , btn_no;
+    public View view ;
 
     public MyQstViewHolder(@NonNull View itemView) {
         super(itemView);

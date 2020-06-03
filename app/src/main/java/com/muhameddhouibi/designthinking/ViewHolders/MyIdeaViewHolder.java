@@ -13,9 +13,9 @@ import com.muhameddhouibi.designthinking.R;
 public class MyIdeaViewHolder extends RecyclerView.ViewHolder{
 
 
-    ImageView like , comment , save ,userIV , useriv  ;
-    TextView sector , like_nbr, viewAllComments , problems,idea ,userTx,date;
-    EditText comment1 ;
+    public  ImageView like , comment , save ,userIV , useriv  ;
+    public TextView sector , like_nbr, viewAllComments , problems,idea ,userTx,date;
+    public EditText comment1 ;
 
     public MyIdeaViewHolder(@NonNull View itemView) {
 
