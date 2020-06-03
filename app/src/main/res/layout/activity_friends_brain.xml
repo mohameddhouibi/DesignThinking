@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GlobalBrainstorming.Menu.FriendsBrainActivity">
+
+    <RelativeLayout
+        android:id="@+id/Relative1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp">
+
+        <ImageView
+            android:id="@+id/bar"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/im1"></ImageView>
+
+        <TextView
+            android:id="@+id/tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/bar"
+            android:fontFamily="@font/montserrat"
+            android:text="Add New Idea "
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/txx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tx"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_toRightOf="@+id/bar"
+            android:fontFamily="@font/montserrat"
+            android:text="Add your idea with a short description don't forget to mention your Inspiration source "
+            android:textSize="15dp"
+            android:textStyle="normal"></TextView>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

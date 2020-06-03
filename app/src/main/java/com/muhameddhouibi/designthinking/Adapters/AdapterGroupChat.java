@@ -1,11 +1,10 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Adapters;
 
 import android.content.Context;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,8 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.muhameddhouibi.designthinking.Entity.ChatGroup;
-
-import org.w3c.dom.Text;
+import com.muhameddhouibi.designthinking.R;
 
 import java.util.ArrayList;
 import java.util.Calendar;

@@ -18,14 +18,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.internal.api.FirebaseNoSignedInUserException;
-import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.Entity.Invitation;
 import com.muhameddhouibi.designthinking.Entity.User;
 import com.muhameddhouibi.designthinking.Menu.FriendsActivity;
@@ -33,7 +27,7 @@ import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
 import com.muhameddhouibi.designthinking.Menu.NotificationsActivity;
 import com.muhameddhouibi.designthinking.Menu.ProfileActivity;
 import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
-import com.muhameddhouibi.designthinking.Steps.Step1Activity;
+import com.muhameddhouibi.designthinking.ViewHolders.MyViewHolder;
 
 public class TestGameActivity extends AppCompatActivity {
     Button ready;
@@ -41,7 +35,7 @@ public class TestGameActivity extends AppCompatActivity {
     String playerId;
     FirebaseAuth mAuth;
     private FirebaseRecyclerOptions<User> options;
-    private FirebaseRecyclerAdapter<User,MyViewHolder>adapter;
+    private FirebaseRecyclerAdapter<User, MyViewHolder>adapter;
     private RecyclerView recyclerView;
     FirebaseDatabase firebaseDatabase ;
     DatabaseReference Users ;

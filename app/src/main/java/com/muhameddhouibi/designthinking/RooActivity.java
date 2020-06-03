@@ -9,10 +9,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -25,19 +23,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.Entity.Room;
-import com.muhameddhouibi.designthinking.Entity.User;
 import com.muhameddhouibi.designthinking.Menu.FriendsActivity;
 import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
 import com.muhameddhouibi.designthinking.Menu.NotificationsActivity;
 import com.muhameddhouibi.designthinking.Menu.ProfileActivity;
 import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
 import com.muhameddhouibi.designthinking.Phases.Ideation;
-import com.muhameddhouibi.designthinking.Phases.Inspiration;
-import com.muhameddhouibi.designthinking.Steps.Step1Activity;
-
-import org.w3c.dom.Text;
-
-import java.util.HashMap;
+import com.muhameddhouibi.designthinking.ViewHolders.MyViewHolder;
 
 public class RooActivity extends AppCompatActivity {
 
@@ -49,7 +41,7 @@ public class RooActivity extends AppCompatActivity {
     TextView tx1,tx2,tx3,tx4,tx5;
     FirebaseAuth mAuth;
     private FirebaseRecyclerOptions<String> options;
-    private FirebaseRecyclerAdapter<String,MyViewHolder> adapter;
+    private FirebaseRecyclerAdapter<String, MyViewHolder> adapter;
     private RecyclerView recyclerView;
     FirebaseDatabase firebaseDatabase ;
     DatabaseReference FinalRoom ,Workshop ;

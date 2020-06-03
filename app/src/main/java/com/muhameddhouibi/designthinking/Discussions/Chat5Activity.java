@@ -22,8 +22,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.AdapterGroupChat;
-import com.muhameddhouibi.designthinking.ChatStepActivity;
+import com.muhameddhouibi.designthinking.Adapters.AdapterGroupChat;
 import com.muhameddhouibi.designthinking.Entity.ChatGroup;
 import com.muhameddhouibi.designthinking.R;
 

@@ -12,13 +12,10 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -30,18 +27,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.Entity.Room;
-import com.muhameddhouibi.designthinking.Entity.User;
 import com.muhameddhouibi.designthinking.Menu.FriendsActivity;
 import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
 import com.muhameddhouibi.designthinking.Menu.NotificationsActivity;
 import com.muhameddhouibi.designthinking.Menu.ProfileActivity;
 import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
+import com.muhameddhouibi.designthinking.ViewHolders.MyGameViewHolder;
 
 public class WorkshopActivity extends AppCompatActivity  {
 
@@ -50,7 +42,7 @@ public class WorkshopActivity extends AppCompatActivity  {
     FirebaseAuth mAuth;
     private FirebaseRecyclerOptions<Room> options;
     private FirebaseRecyclerOptions<Room> options1;
-    private FirebaseRecyclerAdapter<Room,MyGameViewHolder> adapter;
+    private FirebaseRecyclerAdapter<Room, MyGameViewHolder> adapter;
     DatabaseReference publicrooms ;
     DatabaseReference privaterooms,playerreff2 ;
      DatabaseReference codeRef ;

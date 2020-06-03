@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,15 +15,15 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.Entity.Question;
+import com.muhameddhouibi.designthinking.ViewHolders.MyQstViewHolder;
 
 public class YesNoQstActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     RecyclerView recyclerView ;
 
     private FirebaseRecyclerOptions<Question> options;
-    private FirebaseRecyclerAdapter<Question,MyQstViewHolder> adapter;
+    private FirebaseRecyclerAdapter<Question, MyQstViewHolder> adapter;
     DatabaseReference questions ;
     FirebaseDatabase firebaseDatabase ;
     @Override

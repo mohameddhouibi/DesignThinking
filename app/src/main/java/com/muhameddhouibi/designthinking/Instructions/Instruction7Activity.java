@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.muhameddhouibi.designthinking.CardStackAdapter;
+import com.muhameddhouibi.designthinking.Adapters.CardStackAdapter;
 import com.muhameddhouibi.designthinking.CardStackCallback;
 import com.muhameddhouibi.designthinking.ItemModel;
 import com.muhameddhouibi.designthinking.Menu.FriendsActivity;

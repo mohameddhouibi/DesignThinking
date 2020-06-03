@@ -7,13 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.sax.StartElementListener;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,21 +25,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.Entity.Idea;
 import com.muhameddhouibi.designthinking.Entity.User;
-import com.muhameddhouibi.designthinking.IdeaAdapter;
-import com.muhameddhouibi.designthinking.Menu.NewViewHolder;
-import com.muhameddhouibi.designthinking.GlobalBrainstorming.MyIdeaViewHolder;
+import com.muhameddhouibi.designthinking.Adapters.IdeaAdapter;
 import com.muhameddhouibi.designthinking.R;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-
-import javax.microedition.khronos.opengles.GL;
 
 public class GloablBrainStorming extends AppCompatActivity {
 

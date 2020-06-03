@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.ViewHolders;
 
 import android.view.View;
 import android.widget.EditText;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.muhameddhouibi.designthinking.R;
 
 public class MyIdeaViewHolder extends RecyclerView.ViewHolder{
 

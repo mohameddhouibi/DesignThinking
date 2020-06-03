@@ -6,13 +6,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -23,13 +21,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.muhameddhouibi.designthinking.Entity.Game;
 import com.muhameddhouibi.designthinking.Entity.Invitation;
-import com.muhameddhouibi.designthinking.Entity.User;
-import com.muhameddhouibi.designthinking.MyInvitationViewHolder;
+import com.muhameddhouibi.designthinking.ViewHolders.MyInvitationViewHolder;
 import com.muhameddhouibi.designthinking.R;
 import com.muhameddhouibi.designthinking.RooActivity;
-import com.muhameddhouibi.designthinking.TestGameActivity;
 
 public class NotificationsActivity extends AppCompatActivity {
     private FirebaseRecyclerOptions<Invitation> options;

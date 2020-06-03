@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.Entity.Idea;
 import com.muhameddhouibi.designthinking.Entity.User;
+import com.muhameddhouibi.designthinking.R;
 
 import java.util.List;
 

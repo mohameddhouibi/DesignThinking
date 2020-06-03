@@ -1,4 +1,4 @@
-package com.muhameddhouibi.designthinking;
+package com.muhameddhouibi.designthinking.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,12 +15,13 @@ import androidx.annotation.Nullable;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+import com.muhameddhouibi.designthinking.R;
 
 import org.w3c.dom.Text;
 
 import java.util.List;
 
-class InstructionAdapter extends ArrayAdapter {
+public class InstructionAdapter extends ArrayAdapter {
     List<Integer>numberImage ;
     List<String>numbreWord;
     Context c ;

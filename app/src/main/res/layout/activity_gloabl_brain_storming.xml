@@ -93,6 +93,6 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/concept"
         app:itemTextColor="#5400E8"
-        app:menu="@menu/bottom_navigation">
+        app:menu="@menu/activity_home_2_drawer">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>
