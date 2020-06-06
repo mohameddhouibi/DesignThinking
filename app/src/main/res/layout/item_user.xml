@@ -33,7 +33,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/montserrat"
         android:text="UserName"
-        android:textColor="#FFF"
+        android:textColor="#0D1643"
         android:textSize="14sp"
         android:textStyle="bold"
         android:layout_toRightOf="@+id/circleImageView2"

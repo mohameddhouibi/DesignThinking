@@ -4,11 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
 
     tools:context=".GlobalBrainstorming.GloablBrainStorming">
     <RelativeLayout
-        android:layout_below="@+id/me"
         android:id="@+id/Relative1"
         android:layout_marginTop="10dp"
         android:layout_marginStart="0dp"
@@ -54,11 +52,10 @@
         android:layout_below="@id/Relative1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:layout_above="@id/bottom_nav">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:background="#FFFFFF"
-
             android:layout_height="match_parent">
 
 
