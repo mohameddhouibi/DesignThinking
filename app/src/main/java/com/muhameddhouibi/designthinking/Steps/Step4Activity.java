@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.muhameddhouibi.designthinking.ChatStepActivity;
 import com.muhameddhouibi.designthinking.Discussions.Chat2Activity;
 import com.muhameddhouibi.designthinking.Discussions.Chat4Activity;
 import com.muhameddhouibi.designthinking.Instructions.Instruction2Activity;
@@ -110,7 +111,7 @@ public class Step4Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Step4Activity.this, Instruction4Activity.class);
-                i.putExtra("discussion",roomname+"Step4");
+                i.putExtra("discussion",roomname+"Step5");
                 startActivity(i);
                 overridePendingTransition(0,0);
 
@@ -131,22 +132,28 @@ public class Step4Activity extends AppCompatActivity {
         });
 
 
-        discussion.setOnClickListener(new View.OnClickListener() {
+        Discussions=FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("Step4").child("Discussion");
+        mAuth = FirebaseAuth.getInstance();
+        result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HashMap<String,String> hashMap = new HashMap<>();
-                hashMap.put("discussionId",Discussion_id);
-                hashMap.put("StepNum","1");
-                hashMap.put("RoomName",roomname);
-                Discussions.child(roomname+"Step4").setValue(hashMap)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                InformationAlertBuilder ();
+            }
+        });
+        HashMap<String,String> hashMap = new HashMap<>();
+        hashMap.put("discussionId",Discussion_id);
+        hashMap.put("StepNum","4");
+        hashMap.put("RoomName",roomname);
+        Discussions.child("Step4").setValue(hashMap)
+                .addOnSuccessListener(
+                        new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                playerreff1 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+1);
-                                playerreff2 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+2);
-                                playerreff3 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+3);
-                                playerreff4 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+4);
-                                playerreff5 =FirebaseDatabase.getInstance().getReference("rooms/" + roomname + "/player"+5);
+                                playerreff1 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player1");
+                                playerreff2 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player2");
+                                playerreff3 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player3");
+                                playerreff4 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player4");
+                                playerreff5 =FirebaseDatabase.getInstance().getReference("Workshops").child(roomname).child("InRoom").child("Player5");
                                 playerreff1.addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -261,15 +268,20 @@ public class Step4Activity extends AppCompatActivity {
                                 hashMap1.put("Player3",a3);
                                 hashMap1.put("Player4",a4);
                                 hashMap1.put("Player5",a5);
-                                Discussions.child(roomname+"Step4").child("Participants").setValue(hashMap1);
-                                Intent i = new Intent(Step4Activity.this, Chat4Activity.class);
-                                i.putExtra("discussion",roomname+"Step4");
-                                startActivity(i);
-                                overridePendingTransition(0,0);
+                                Discussions.child("Step1").child("Participants").setValue(hashMap1);
+
 
 
                             }
                         });
+
+        discussion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Step4Activity.this, Step5Activity.class);
+                i.putExtra("discussion",roomname);
+                startActivity(i);
+                overridePendingTransition(0,0);
             }
         });
 
