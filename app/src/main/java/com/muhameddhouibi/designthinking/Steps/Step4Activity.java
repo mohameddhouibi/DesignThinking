@@ -121,7 +121,6 @@ public class Step4Activity extends AppCompatActivity {
 
 
         Toast toast = Toast. makeText(this,roomname , Toast.LENGTH_SHORT); toast. show();
-        Discussions= FirebaseDatabase.getInstance().getReference("Discussions");
         mAuth = FirebaseAuth.getInstance();
         final String Discussion_id= Discussions.push().getKey();
         result.setOnClickListener(new View.OnClickListener() {
@@ -268,7 +267,7 @@ public class Step4Activity extends AppCompatActivity {
                                 hashMap1.put("Player3",a3);
                                 hashMap1.put("Player4",a4);
                                 hashMap1.put("Player5",a5);
-                                Discussions.child("Step1").child("Participants").setValue(hashMap1);
+                                Discussions.child("Step4").child("Participants").setValue(hashMap1);
 
 
 
@@ -278,7 +277,7 @@ public class Step4Activity extends AppCompatActivity {
         discussion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Step4Activity.this, Step5Activity.class);
+                Intent i = new Intent(Step4Activity.this, Chat4Activity.class);
                 i.putExtra("discussion",roomname);
                 startActivity(i);
                 overridePendingTransition(0,0);

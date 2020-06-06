@@ -266,7 +266,7 @@ public class Step2Activity extends AppCompatActivity {
                                 hashMap1.put("Player3",a3);
                                 hashMap1.put("Player4",a4);
                                 hashMap1.put("Player5",a5);
-                                Discussions.child("Step1").child("Participants").setValue(hashMap1);
+                                Discussions.child("Step2").child("Participants").setValue(hashMap1);
 
 
 
@@ -276,7 +276,7 @@ public class Step2Activity extends AppCompatActivity {
         discussion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Step2Activity.this, Step3Activity.class);
+                Intent i = new Intent(Step2Activity.this, Chat2Activity.class);
                 i.putExtra("discussion",roomname);
                 startActivity(i);
                 overridePendingTransition(0,0);
