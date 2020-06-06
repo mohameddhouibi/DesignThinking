@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -18,6 +20,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +31,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.Entity.Idea;
 import com.muhameddhouibi.designthinking.Entity.User;
 import com.muhameddhouibi.designthinking.Adapters.IdeaAdapter;
+import com.muhameddhouibi.designthinking.Menu.FriendsActivity;
+import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
+import com.muhameddhouibi.designthinking.Menu.NotificationsActivity;
+import com.muhameddhouibi.designthinking.Menu.ProfileActivity;
+import com.muhameddhouibi.designthinking.Menu.WelcomeHomeActivity;
 import com.muhameddhouibi.designthinking.R;
 
 import java.util.Calendar;
@@ -41,6 +49,7 @@ public class GloablBrainStorming extends AppCompatActivity {
     private IdeaAdapter ideaAdapter ;
     public List<Idea> ideaList ;
     private FirebaseUser firebaseUser;
+    Dialog Infodiaog ;
 
     private FirebaseRecyclerOptions<Idea> options;
     private FirebaseRecyclerAdapter<Idea, MyIdeaViewHolder> adapter;
@@ -50,6 +59,40 @@ public class GloablBrainStorming extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gloabl_brain_storming);
 
+        // Bottom Navigation //
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.homemenu);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId())
+                {
+                    case R.id.addmenu :
+                        startActivity(new Intent(getApplicationContext(), NotificationsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.friendsmenu :
+                        startActivity(new Intent(getApplicationContext(), FriendsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.homemenu :
+                        startActivity(new Intent(getApplicationContext(), WelcomeHomeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.profilemenu :
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.gamesmenu :
+                        startActivity(new Intent(getApplicationContext(), MyGamesActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+
+                }
+                return false;
+            }
+        });
+        //end Bottom Navigation //
 
         recyclerView = findViewById(R.id.recyclerBrains);
 
@@ -74,13 +117,25 @@ public class GloablBrainStorming extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull final MyIdeaViewHolder holder, int position, @NonNull final Idea model) {
 
                 firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                publisherInfo(holder.userIV,holder.useriv,holder.userTx,model.getUsername());
+                publisherInfo(holder.userIV,holder.userTx,model.getUsername());
                 holder.sector.setText(model.getSector());
                 holder.problems.setText(model.getProblem());
                 holder.idea.setText(model.getIdea());
                 holder.like_nbr.setText("520");
                 holder.viewAllComments.setText("view all comments");
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getDisplayName());
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                        User user = dataSnapshot.getValue(User.class);
+                        Glide.with(getApplicationContext()).load(user.getUrl()).into(holder.useriv);
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
                 isLike(model.getId() , holder.like );
                 nbrLike(holder.like_nbr , model.getId());
                 getcomments(holder.viewAllComments,model.getId());
@@ -149,7 +204,7 @@ public class GloablBrainStorming extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
     }
-    private void publisherInfo(final ImageView UserIV ,final ImageView UserIV2, final TextView userTV, final String UserName)
+    private void publisherInfo(final ImageView UserIV , final TextView userTV, final String UserName)
     {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(UserName);
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -158,7 +213,6 @@ public class GloablBrainStorming extends AppCompatActivity {
 
                 User user = dataSnapshot.getValue(User.class);
                 Glide.with(getApplicationContext()).load(user.getUrl()).into(UserIV);
-                Glide.with(getApplicationContext()).load(user.getUrl()).into(UserIV2);
                 userTV.setText(user.getUserName());
             }
 
