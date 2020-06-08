@@ -102,7 +102,8 @@ public class TestGameActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull final MyViewHolder holder, int position, @NonNull final User model) {
                 String test = model.getUrl();
                 if (test ==("")){
-                    holder.imageView.setImageDrawable(getResources().getDrawable(R.drawable.userphoto));
+                    holder.imageView.setImageResource(R.drawable.userphoto);
+
                 }else
                 {
                     Glide.with(getApplicationContext()).load(model.getUrl()).into(holder.imageView);
