@@ -85,9 +85,13 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/add_idea"
         android:visibility="invisible"
+
+        android:layout_centerHorizontal="true"
+
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/Relaa6"
+        android:layout_marginTop="50dp"
         app:cardBackgroundColor="@color/colorWhite"
         >
         <RelativeLayout
@@ -206,10 +210,12 @@
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/add_challenge"
-        android:visibility="visible"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/Relaa6"
+        android:layout_marginTop="50dp"
         app:cardBackgroundColor="@color/colorWhite"
         >
         <RelativeLayout

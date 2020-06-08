@@ -31,6 +31,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.muhameddhouibi.designthinking.Entity.Idea;
 import com.muhameddhouibi.designthinking.Entity.User;
 import com.muhameddhouibi.designthinking.Adapters.IdeaAdapter;
+import com.muhameddhouibi.designthinking.GlobalBrainstorming.Menu.AddBrainActivity;
+import com.muhameddhouibi.designthinking.GlobalBrainstorming.Menu.FriendsBrainActivity;
+import com.muhameddhouibi.designthinking.GlobalBrainstorming.Menu.ProfileBrainActivity;
+import com.muhameddhouibi.designthinking.GlobalBrainstorming.Menu.SearchBrainActivity;
 import com.muhameddhouibi.designthinking.Menu.FriendsActivity;
 import com.muhameddhouibi.designthinking.Menu.MyGamesActivity;
 import com.muhameddhouibi.designthinking.Menu.NotificationsActivity;
@@ -68,23 +72,19 @@ public class GloablBrainStorming extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.addmenu :
-                        startActivity(new Intent(getApplicationContext(), NotificationsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), AddBrainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.Searchmenu :
+                        startActivity(new Intent(getApplicationContext(), SearchBrainActivity.class));
                         overridePendingTransition(0,0);
                         return true ;
                     case R.id.friendsmenu :
-                        startActivity(new Intent(getApplicationContext(), FriendsActivity.class));
-                        overridePendingTransition(0,0);
-                        return true ;
-                    case R.id.homemenu :
-                        startActivity(new Intent(getApplicationContext(), WelcomeHomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(), FriendsBrainActivity.class));
                         overridePendingTransition(0,0);
                         return true ;
                     case R.id.profilemenu :
-                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true ;
-                    case R.id.gamesmenu :
-                        startActivity(new Intent(getApplicationContext(), MyGamesActivity.class));
+                        startActivity(new Intent(getApplicationContext(), ProfileBrainActivity.class));
                         overridePendingTransition(0,0);
                         return true ;
 
@@ -133,7 +133,6 @@ public class GloablBrainStorming extends AppCompatActivity {
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
                 isLike(model.getId() , holder.like );
@@ -195,9 +194,6 @@ public class GloablBrainStorming extends AppCompatActivity {
                 });
             }
         };
-
-
-
 
         adapter.startListening();
 

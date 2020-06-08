@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GlobalBrainstorming.Menu.AddBrainActivity"></activity>
-        <activity android:name=".GlobalBrainstorming.Menu.FriendsBrainActivity" />
-        <activity android:name=".GlobalBrainstorming.Menu.AcceuilBrainActivity" />
-        <activity android:name=".GlobalBrainstorming.Menu.SearchBrainActivity" />
-        <activity android:name=".GlobalBrainstorming.Menu.ProfileBrainActivity" />
+        <activity android:name=".GlobalBrainstorming.Menu.AddBrainActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".GlobalBrainstorming.Menu.FriendsBrainActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".GlobalBrainstorming.Menu.AcceuilBrainActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".GlobalBrainstorming.Menu.SearchBrainActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".GlobalBrainstorming.Menu.ProfileBrainActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".GlobalBrainstorming.CommentsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
