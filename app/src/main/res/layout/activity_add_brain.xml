@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorWhite"
     android:layout_height="match_parent"
     tools:context=".GlobalBrainstorming.Menu.AddBrainActivity">
-
     <RelativeLayout
         android:id="@+id/Relative1"
         android:layout_marginTop="10dp"
@@ -47,134 +47,293 @@
             android:layout_toRightOf="@+id/bar"></TextView>
 
     </RelativeLayout>
-
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Relaa6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/Relative1">
+        <Button
+            android:id="@+id/Add_Idea"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/cornerbutton1"
+            android:text="Add Idea"
+            android:fontFamily="@font/montserrat"
+            android:textAllCaps="false"
+            android:textStyle="normal"
+            ></Button>
+        <Button
+            android:id="@+id/Add_challenge"
+            android:layout_width="185dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/Add_Idea"
+            android:background="@drawable/cornerbutton2"
+            android:text="Add Challenge"
+            android:fontFamily="@font/montserrat"
+            android:textAllCaps="false"
+            android:textColor="#003366"
+            android:textStyle="normal"
 
+            ></Button>
+
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_idea"
+        android:visibility="invisible"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="@color/colorWhite"
         >
-
-        <RelativeLayout
-            android:id="@+id/e1"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/concept">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Idea details"
-                android:textSize="25dp"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"></TextView>
-        </RelativeLayout>
-
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="65dp"
-            android:background="@color/colorWhite">
-            <EditText
-                android:id="@+id/info1"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Room Name"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="35dp"
-                ></EditText>
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            >
 
-            <EditText
-                android:id="@+id/info3"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Number of players"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info1"
-                android:layout_marginTop="35dp"
-                ></EditText>
-            <EditText
-                android:id="@+id/info4"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Subject"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/info3"
-                android:layout_marginTop="35dp"
-                ></EditText>
+            <RelativeLayout
+                android:id="@+id/e1"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/concept">
 
-            <CheckBox
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:text="Public Room"
-                android:id="@+id/Public_check"
-                android:layout_below="@+id/info4"
-                android:layout_centerHorizontal="true"
-                >   </CheckBox>
-            <CheckBox
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:text="Private Room"
-                android:id="@+id/Private_check"
-                android:layout_below="@+id/Public_check"
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New idea details"
+                    android:textSize="25dp"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"></TextView>
+            </RelativeLayout>
 
-                android:layout_centerHorizontal="true">
-            </CheckBox>
-            <EditText
-                android:id="@+id/info2"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="Privacy Code"
-                android:fontFamily="@font/montserrat"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/Private_check"
-                android:layout_marginTop="10dp"
-                android:visibility="visible"
-                ></EditText>
 
-            <Button
-                android:id="@+id/conf"
-                android:layout_below="@id/info2"
-                android:layout_marginTop="35dp"
-                android:text="Confirm"
-                android:layout_centerHorizontal="true"
-                android:layout_width="250dp"
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/cornerbutton2"
-                android:fontFamily="@font/montserrat"
-                android:textAllCaps="false"
-                android:textColor="#003366">
-            </Button>
-            <Button
-                android:id="@+id/annul"
-                android:layout_below="@id/conf"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:text="Cancel"
-                android:layout_centerHorizontal="true"
-                android:layout_width="190dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cornerbutton1"
-                android:fontFamily="@font/montserrat"
-                android:textAllCaps="false"
-                android:textColor="#FFFF">
-            </Button>
+                android:layout_marginTop="65dp"
+                android:background="@color/colorWhite">
+                <EditText
+                    android:id="@+id/info1"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Idea Title"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    ></EditText>
+
+                <EditText
+                    android:id="@+id/info3"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Sector"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/info1"
+                    android:layout_marginTop="35dp"
+                    ></EditText>
+                <EditText
+                    android:id="@+id/info4"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Problem"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/info3"
+                    android:layout_marginTop="35dp"
+                    ></EditText>
+
+                <EditText
+                    android:id="@+id/info2"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Description"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_below="@+id/info4"
+                    android:layout_marginTop="35dp"
+                    android:visibility="visible"
+                    ></EditText>
+
+                <Button
+                    android:id="@+id/conf"
+                    android:layout_below="@id/info2"
+                    android:layout_marginTop="35dp"
+                    android:text="Confirm"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cornerbutton2"
+                    android:fontFamily="@font/montserrat"
+                    android:textAllCaps="false"
+                    android:textColor="#003366">
+                </Button>
+                <Button
+                    android:id="@+id/annul"
+                    android:layout_below="@id/conf"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Cancel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cornerbutton1"
+                    android:fontFamily="@font/montserrat"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFF">
+                </Button>
+            </RelativeLayout>
+
+
+
         </RelativeLayout>
 
 
 
-    </RelativeLayout>
 
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_challenge"
+        android:visibility="visible"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="@color/colorWhite"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            >
+
+            <RelativeLayout
+                android:id="@+id/e1_challenge"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/concept">
+
+                <TextView
+                    android:id="@+id/title_challenge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Challenge details"
+                    android:textSize="25dp"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"></TextView>
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:background="@color/colorWhite">
+                <EditText
+                    android:id="@+id/info1_challenge"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Title"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    ></EditText>
+
+                <EditText
+                    android:id="@+id/info3_challenge"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Sector"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/info1_challenge"
+                    android:layout_marginTop="35dp"
+                    ></EditText>
+                <EditText
+                    android:id="@+id/info4_challenge"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Problem"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/info3_challenge"
+                    android:layout_marginTop="35dp"
+                    ></EditText>
+
+                <EditText
+                    android:id="@+id/info2_challenge"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Description"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_below="@+id/info4_challenge"
+                    android:layout_marginTop="35dp"
+                    android:visibility="visible"
+                    ></EditText>
+
+                <Button
+                    android:id="@+id/conf_challenge"
+                    android:layout_below="@id/info2_challenge"
+                    android:layout_marginTop="35dp"
+                    android:text="Confirm"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cornerbutton2"
+                    android:fontFamily="@font/montserrat"
+                    android:textAllCaps="false"
+                    android:textColor="#003366">
+                </Button>
+                <Button
+                    android:id="@+id/annul_challenge"
+                    android:layout_below="@id/conf_challenge"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Cancel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cornerbutton1"
+                    android:fontFamily="@font/montserrat"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFF">
+                </Button>
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/concept"
+        app:itemTextColor="#5400E8"
+        app:menu="@menu/activity_home_2_drawer">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>
