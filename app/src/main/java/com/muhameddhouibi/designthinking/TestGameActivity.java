@@ -12,8 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -31,6 +33,7 @@ import com.muhameddhouibi.designthinking.ViewHolders.MyViewHolder;
 
 public class TestGameActivity extends AppCompatActivity {
     Button ready;
+    ImageView imageView ;
     String playerName;
     String playerId;
     FirebaseAuth mAuth;
@@ -97,7 +100,13 @@ public class TestGameActivity extends AppCompatActivity {
         adapter = new FirebaseRecyclerAdapter<User, MyViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull final MyViewHolder holder, int position, @NonNull final User model) {
-
+                String test = model.getUrl();
+                if (test ==("")){
+                    holder.imageView.setImageDrawable(getResources().getDrawable(R.drawable.userphoto));
+                }else
+                {
+                    Glide.with(getApplicationContext()).load(model.getUrl()).into(holder.imageView);
+                }
                 holder.btn_invite.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
