@@ -44,6 +44,7 @@ public class Step1Activity extends AppCompatActivity {
     Button result ;
     String roomname ;
     String a1,a2,a3,a4,a5;
+    String tett ;
     FirebaseDatabase firebaseDatabase ;
     FirebaseAuth mAuth;
     FirebaseUser currentUser ;
@@ -117,7 +118,7 @@ public class Step1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Step1Activity.this, TestSwiActivity.class);
-                i.putExtra("discussion",roomname+"Step1");
+               i.putExtra("discussion",roomname+"Step1");
                 startActivity(i);
                 overridePendingTransition(0,0);
 
